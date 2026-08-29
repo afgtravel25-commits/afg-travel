@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AFG TRAVEL | العمرة</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,Tahoma,sans-serif;
+background:#f1f4f7;
+color:#17202a;
+}
+
+header{
+position:relative;
+min-height:390px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+overflow:hidden;
+color:white;
+
+background:
+linear-gradient(rgba(4,25,60,.78),rgba(7,72,140,.82)),
+url("https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=1600&q=85")
+center/cover no-repeat;
+
+border-radius:0 0 40px 40px;
+}
+
+header::before{
+content:"";
+position:absolute;
+inset:0;
+
+background:
+url("https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&fit=crop&w=1200&q=80")
+center/cover no-repeat;
+
+opacity:.13;
+mix-blend-mode:screen;
+
+pointer-events:none;
+}
+
+header::after{
+content:"🕋";
+
+position:absolute;
+
+font-size:240px;
+
+left:-30px;
+bottom:-90px;
+
+opacity:.08;
+
+transform:rotate(-8deg);
+
+pointer-events:none;
+}
+
+.header-content{
+position:relative;
+z-index:5;
+padding:45px 20px;
+}
+
+.logo{
+font-size:52px;
+font-weight:900;
+letter-spacing:3px;
+text-shadow:0 5px 20px rgba(0,0,0,.35);
+}
+
+.logo span{
+color:#dce2e9;
+}
+
+.tagline{
+margin-top:8px;
+color:#edf3fa;
+font-size:20px;
+}
+
+.umrah-title{
+margin-top:25px;
+font-size:30px;
+font-weight:bold;
+}
+
+.umrah-description{
+max-width:650px;
+margin:12px auto 0;
+font-size:15px;
+line-height:1.9;
+color:#e5edf7;
+}
+
+@media(max-width:600px){
+
+header{
+min-height:430px;
+}
+
+.logo{
+font-size:37px;
+}
+
+.tagline{
+font-size:17px;
+}
+
+.umrah-title{
+font-size:24px;
+}
+
+.umrah-description{
+font-size:13px;
+}
+
+}
+
+.logo{
+font-size:38px;
+font-weight:900;
+letter-spacing:2px;
+}
+
+.logo span{
+color:#cbd2dc;
+}
+
+.tagline{
+margin-top:8px;
+color:#e7ebf0;
+font-size:17px;
+}
+
+.back-home{
+position:absolute;
+top:18px;
+right:18px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+padding:9px 14px;
+border-radius:9px;
+background:rgba(255,255,255,.15);
+}
+
+.container{
+max-width:750px;
+margin:-25px auto 40px;
+padding:0 15px;
+}
+
+.card{
+background:white;
+border-radius:22px;
+padding:24px;
+box-shadow:0 8px 30px rgba(0,0,0,.12);
+}
+
+h1{
+text-align:center;
+color:#092b62;
+font-size:27px;
+margin:5px 0 12px;
+}
+
+.intro{
+text-align:center;
+color:#666;
+line-height:1.9;
+margin-bottom:25px;
+}
+
+/* =========================
+   نوع الطلب
+========================= */
+
+.umrah-types{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-bottom:25px;
+}
+
+.umrah-type{
+border:1px solid #dce2e8;
+border-radius:14px;
+padding:18px 10px;
+text-align:center;
+cursor:pointer;
+background:#f8fafc;
+font-weight:bold;
+transition:.2s;
+}
+
+.umrah-type:hover{
+border-color:#0b5ed7;
+background:#eef5ff;
+}
+
+.umrah-type.active{
+background:#0b5ed7;
+color:white;
+border-color:#0b5ed7;
+}
+
+.umrah-icon{
+font-size:32px;
+margin-bottom:8px;
+}
+
+label{
+display:block;
+font-weight:bold;
+margin-top:18px;
+margin-bottom:7px;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:14px;
+border:1px solid #ccd3dc;
+border-radius:10px;
+font-size:16px;
+font-family:inherit;
+}
+
+textarea{
+min-height:90px;
+resize:vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+outline:none;
+border-color:#0b5ed7;
+}
+
+/* =========================
+   عدد المعتمرين
+========================= */
+
+.number-box{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+}
+
+/* =========================
+   المتطلبات
+========================= */
+
+.requirements{
+margin-top:25px;
+padding:18px;
+background:#f8fafc;
+border:1px solid #e0e5eb;
+border-radius:14px;
+}
+
+.requirements h2{
+margin-top:0;
+color:#092b62;
+font-size:20px;
+}
+
+.requirement{
+padding:13px;
+margin-top:10px;
+background:white;
+border-radius:10px;
+border-right:4px solid #0b5ed7;
+line-height:1.7;
+}
+
+.required{
+color:#dc3545;
+font-size:13px;
+font-weight:bold;
+}
+
+.note{
+margin-top:20px;
+padding:14px;
+background:#eef5ff;
+border-right:4px solid #0b5ed7;
+border-radius:8px;
+line-height:1.8;
+font-size:14px;
+color:#17345f;
+}
+
+.submit{
+width:100%;
+margin-top:25px;
+padding:16px;
+border:0;
+border-radius:11px;
+background:#0b5ed7;
+color:white;
+font-size:17px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.whatsapp-button{
+display:none;
+width:100%;
+margin-top:15px;
+padding:16px;
+border-radius:11px;
+background:#198754;
+color:white;
+text-align:center;
+text-decoration:none;
+font-size:17px;
+font-weight:bold;
+}
+
+.message{
+display:none;
+margin-top:20px;
+padding:15px;
+background:#eef5ff;
+border-right:4px solid #0b5ed7;
+border-radius:8px;
+line-height:1.9;
+}
+
+footer{
+background:#071d43;
+color:white;
+text-align:center;
+padding:30px 15px;
+}
+
+.footer-logo{
+font-size:22px;
+font-weight:bold;
+}
+
+.footer-text{
+margin-top:8px;
+color:#d9e0ea;
+}
+
+@media(max-width:600px){
+
+.logo{
+font-size:32px;
+}
+
+.back-home{
+top:12px;
+right:12px;
+font-size:13px;
+padding:8px 10px;
+}
+
+.card{
+padding:17px;
+}
+
+.umrah-types{
+grid-template-columns:1fr 1fr;
+}
+
+.number-box{
+grid-template-columns:1fr 1fr;
+}
+
+}
+/* =========================
+   تطوير بطاقة العمرة
+========================= */
+
+.card{
+position:relative;
+overflow:hidden;
+border:1px solid rgba(11,94,215,.10);
+}
+
+.card::before{
+content:"🕋";
+position:absolute;
+left:-45px;
+top:30px;
+font-size:170px;
+opacity:.035;
+transform:rotate(-8deg);
+pointer-events:none;
+}
+
+.card::after{
+content:"☪";
+position:absolute;
+right:-35px;
+bottom:20px;
+font-size:180px;
+opacity:.025;
+pointer-events:none;
+}
+
+.card > *{
+position:relative;
+z-index:2;
+}
+
+h1{
+font-size:30px;
+margin-bottom:10px;
+}
+
+.intro{
+background:linear-gradient(135deg,#f8fbff,#eef5ff);
+border-radius:15px;
+padding:16px;
+border-right:4px solid #0b5ed7;
+}
+
+.umrah-types{
+margin-top:22px;
+}
+
+.umrah-type{
+background:linear-gradient(145deg,#ffffff,#f5f8fc);
+box-shadow:0 5px 18px rgba(0,0,0,.06);
+}
+
+.umrah-type.active{
+background:linear-gradient(135deg,#061d49,#0b5ed7);
+box-shadow:0 8px 22px rgba(11,94,215,.25);
+}
+
+.requirements{
+background:linear-gradient(145deg,#f8fbff,#eef4fa);
+border:1px solid #dce7f3;
+box-shadow:inset 0 1px 0 rgba(255,255,255,.8);
+}
+
+.requirement{
+box-shadow:0 3px 12px rgba(0,0,0,.05);
+transition:.2s;
+}
+
+.requirement:hover{
+transform:translateY(-2px);
+box-shadow:0 7px 18px rgba(0,0,0,.09);
+}
+
+.submit{
+background:linear-gradient(135deg,#061d49,#0b5ed7);
+box-shadow:0 7px 20px rgba(11,94,215,.25);
+transition:.2s;
+}
+
+.submit:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 25px rgba(11,94,215,.35);
+}
+
+.whatsapp-button{
+background:linear-gradient(135deg,#128c4a,#198754);
+box-shadow:0 7px 20px rgba(25,135,84,.22);
+}
+
+.note{
+box-shadow:0 4px 15px rgba(0,0,0,.04);
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<a href="index.html" class="back-home">
+← الرئيسية
+</a>
+
+<div class="header-content">
+
+<div class="logo">
+AFG <span>TRAVEL</span>
+</div>
+
+<div class="tagline">
+للسفر والسياحة ✈️
+</div>
+
+<div class="umrah-title">
+🕋 رحلة إيمانية تبدأ من هنا
+</div>
+
+<div class="umrah-description">
+نساعدكم في تقديم طلبات العمرة ومتابعة المتطلبات
+والتواصل معكم لتوضيح البرامج والخدمات المتاحة.
+</div>
+
+</div>
+
+</header>
+
+<a href="index.html" class="back-home">
+← الرئيسية
+</a>
+
+<div class="logo">
+AFG <span>TRAVEL</span>
+</div>
+
+<div class="tagline">
+للسفر والسياحة ✈️
+</div>
+
+</header>
+
+
+<div class="container">
+
+<div class="card">
+
+
+<h1>
+🕋 طلب خدمات العمرة
+</h1>
+
+
+<div class="intro">
+
+أرسل بياناتك ومتطلباتك، وسنتواصل معك
+لمراجعة الطلب وتوضيح البرنامج والخدمات المتاحة حاليًا.
+
+</div>
+
+
+<!-- نوع الخدمة -->
+
+<div class="umrah-types">
+
+<div class="umrah-type" data-type="عمرة">
+
+<div class="umrah-icon">
+🕋
+</div>
+
+طلب عمرة
+
+</div>
+
+
+<div class="umrah-type" data-type="استفسار عن العمرة">
+
+<div class="umrah-icon">
+📋
+</div>
+
+استفسار عن العمرة
+
+</div>
+
+</div>
+
+
+<label>
+نوع الطلب
+</label>
+
+<input
+type="text"
+id="umrahType"
+placeholder="اختر نوع الطلب من الأعلى"
+readonly
+>
+
+
+<!-- عدد المعتمرين -->
+
+<div class="number-box">
+
+<div>
+
+<label>
+عدد البالغين
+</label>
+
+<input
+type="number"
+id="adults"
+min="1"
+max="20"
+value="1"
+>
+
+</div>
+
+
+<div>
+
+<label>
+عدد الأطفال
+</label>
+
+<input
+type="number"
+id="children"
+min="0"
+max="20"
+value="0"
+>
+
+</div>
+
+</div>
+
+
+<label>
+اسم المعتمر / المسؤول عن الطلب
+</label>
+
+<input
+type="text"
+id="customerName"
+placeholder="اكتب الاسم الكامل"
+>
+
+
+<label>
+رقم الهاتف
+</label>
+
+<input
+type="tel"
+id="customerPhone"
+placeholder="مثال: 249967214147"
+>
+
+
+<label>
+رقم جواز السفر
+</label>
+
+<input
+type="text"
+id="passportNumber"
+placeholder="اكتب رقم الجواز"
+>
+
+
+<label>
+رقم أبشر للضامن
+</label>
+
+<input
+type="text"
+id="absherNumber"
+placeholder="اكتب رقم أبشر للضامن"
+>
+
+
+<!-- المتطلبات -->
+
+<div class="requirements">
+
+<h2>
+📋 المطلوبات
+</h2>
+
+
+<div class="requirement">
+
+📷 <strong>صورة شخصية</strong>
+
+<br>
+
+خلفية بيضاء
+
+<br>
+
+<span class="required">
+مطلوبة
+</span>
+
+</div>
+
+
+<div class="requirement">
+
+🛂 <strong>صورة من رقم الجواز للمعتمر</strong>
+
+<br>
+
+صورة واضحة من صفحة بيانات الجواز
+
+<br>
+
+<span class="required">
+مطلوبة
+</span>
+
+</div>
+
+
+<div class="requirement">
+
+🪪 <strong>صورة من بطاقة الضامن</strong>
+
+<br>
+
+صورة واضحة للبطاقة
+
+<br>
+
+<span class="required">
+مطلوبة
+</span>
+
+</div>
+
+
+<div class="requirement">
+
+🔐 <strong>رقم أبشر للضامن</strong>
+
+<br>
+
+يتم إدخاله في النموذج أعلاه
+
+<br>
+
+<span class="required">
+مطلوب
+</span>
+
+</div>
+
+</div>
+
+
+<!-- رفع الملفات -->
+
+<label>
+📎 إرفاق المستندات
+</label>
+
+<input
+type="file"
+id="documents"
+accept="image/*,.pdf"
+multiple
+>
+
+
+<div class="note">
+
+📌 يرجى إرفاق الملفات المطلوبة بوضوح.
+
+<br>
+
+⚠️ بعد فتح واتساب، يرجى إرسال الملفات في نفس المحادثة.
+
+</div>
+
+
+<label>
+ملاحظات إضافية
+</label>
+
+<textarea
+id="notes"
+placeholder="اكتب أي ملاحظات أو طلبات خاصة..."
+></textarea>
+
+
+<button
+type="button"
+id="submitUmrah"
+class="submit"
+>
+
+📲 إرسال طلب العمرة
+
+</button>
+
+
+<a
+id="whatsappLink"
+class="whatsapp-button"
+href="#"
+target="_blank"
+>
+
+💬 فتح واتساب وإرسال الطلب
+
+</a>
+
+
+<div
+id="message"
+class="message"
+></div>
+
+
+</div>
+
+</div>
+
+
+<footer>
+
+<div class="footer-logo">
+AFG TRAVEL
+</div>
+
+<div class="footer-text">
+للسفر والسياحة ✈️
+</div>
+
+<div class="footer-text">
+متاحون لخدمتكم على مدار 24 ساعة
+</div>
+
+</footer>
+
+
+<script>
+
+
+/* =========================
+   اختيار نوع الطلب
+========================= */
+
+const umrahButtons =
+document.querySelectorAll(".umrah-type");
+
+const umrahType =
+document.getElementById("umrahType");
+
+
+umrahButtons.forEach(function(button){
+
+button.addEventListener("click",function(){
+
+umrahButtons.forEach(function(b){
+
+b.classList.remove("active");
+
+});
+
+this.classList.add("active");
+
+umrahType.value =
+this.dataset.type;
+
+});
+
+});
+
+
+/* =========================
+   إرسال الطلب
+========================= */
+
+document
+.getElementById("submitUmrah")
+.addEventListener("click",function(){
+
+
+const type =
+umrahType.value;
+
+const adults =
+document.getElementById("adults").value;
+
+const children =
+document.getElementById("children").value;
+
+const name =
+document.getElementById("customerName").value.trim();
+
+const phone =
+document.getElementById("customerPhone").value.trim();
+
+const passportNumber =
+document.getElementById("passportNumber").value.trim();
+
+const absherNumber =
+document.getElementById("absherNumber").value.trim();
+
+const documents =
+document.getElementById("documents").files.length;
+
+const notes =
+document.getElementById("notes").value.trim();
+
+
+if(!type){
+
+alert("يرجى اختيار نوع الطلب");
+
+return;
+
+}
+
+
+if(!name){
+
+alert("يرجى كتابة اسم المعتمر أو المسؤول عن الطلب");
+
+return;
+
+}
+
+
+if(!phone){
+
+alert("يرجى كتابة رقم الهاتف");
+
+return;
+
+}
+
+
+if(!passportNumber){
+
+alert("يرجى كتابة رقم جواز السفر");
+
+return;
+
+}
+
+
+if(!absherNumber){
+
+alert("يرجى كتابة رقم أبشر للضامن");
+
+return;
+
+}
+
+
+if(documents < 1){
+
+alert("يرجى إرفاق المستندات المطلوبة");
+
+return;
+
+}
+
+
+const orderNumber =
+"AFG-UMRAH-"+Date.now();
+
+
+const message =
+
+"🕋 *طلب خدمات عمرة جديد*"+
+"\n\n"+
+
+"━━━━━━━━━━━━━━"+
+"\n\n"+
+
+"✈️ *AFG TRAVEL*"+
+"\n\n"+
+
+"🔢 رقم الطلب: "+
+orderNumber+
+"\n\n"+
+
+"📋 نوع الطلب: "+
+type+
+"\n"+
+
+"👨 البالغون: "+
+adults+
+"\n"+
+
+"👧 الأطفال: "+
+children+
+"\n\n"+
+
+"👤 *بيانات المعتمر*"+
+"\n\n"+
+
+"الاسم: "+
+name+
+"\n"+
+
+"رقم الهاتف: "+
+phone+
+"\n"+
+
+"رقم الجواز: "+
+passportNumber+
+"\n"+
+
+"رقم أبشر للضامن: "+
+absherNumber+
+"\n\n"+
+
+"📎 عدد الملفات المرفقة: "+
+documents+
+"\n\n"+
+
+"📝 *الملاحظات*"+
+"\n"+
+
+(notes || "لا توجد ملاحظات")+
+"\n\n"+
+
+"━━━━━━━━━━━━━━"+
+"\n\n"+
+
+"⚠️ يرجى إرسال الملفات المرفقة في نفس محادثة واتساب."+
+"\n\n"+
+
+"*AFG TRAVEL للسفر والسياحة*";
+
+
+const whatsappNumber =
+"249967214147";
+
+
+const whatsappURL =
+"https://wa.me/"+
+whatsappNumber+
+"?text="+
+encodeURIComponent(message);
+
+
+const whatsappLink =
+document.getElementById("whatsappLink");
+
+
+whatsappLink.href =
+whatsappURL;
+
+whatsappLink.style.display =
+"block";
+
+
+document
+.getElementById("message")
+.innerHTML =
+
+"✅ تم تجهيز طلب العمرة بنجاح."+
+"<br><br>"+
+"🔢 رقم الطلب: "+
+orderNumber+
+"<br><br>"+
+"اضغط الزر الأخضر لفتح واتساب وإرسال الطلب.";
+
+
+document
+.getElementById("message")
+.style.display =
+"block";
+
+
+});
+
+</script>
+
+
+</body>
+
+</html>

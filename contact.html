@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AFG TRAVEL | تواصل معنا</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial,Tahoma,sans-serif;
+background:#f1f4f7;
+color:#17202a;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+position:relative;
+background:linear-gradient(135deg,#061d49,#0b5ed7);
+color:white;
+text-align:center;
+padding:45px 20px 60px;
+border-radius:0 0 32px 32px;
+}
+
+.logo{
+font-size:40px;
+font-weight:900;
+letter-spacing:2px;
+}
+
+.logo span{
+color:#cbd2dc;
+}
+
+.tagline{
+margin-top:8px;
+font-size:17px;
+color:#e7ebf0;
+}
+
+.back-home{
+position:absolute;
+top:18px;
+right:18px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+background:rgba(255,255,255,.15);
+padding:10px 15px;
+border-radius:10px;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container{
+max-width:760px;
+margin:-28px auto 45px;
+padding:0 15px;
+}
+
+.card{
+background:white;
+border-radius:24px;
+padding:28px 22px;
+box-shadow:0 8px 30px rgba(0,0,0,.12);
+}
+
+h1{
+text-align:center;
+color:#092b62;
+font-size:28px;
+margin:4px 0 10px;
+}
+
+.intro{
+text-align:center;
+color:#666;
+line-height:1.9;
+margin-bottom:28px;
+}
+
+/* =========================
+   SOCIAL MEDIA
+========================= */
+
+.section-title{
+text-align:center;
+font-size:21px;
+font-weight:bold;
+color:#092b62;
+margin:28px 0 16px;
+}
+
+.social-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:13px;
+}
+
+.social{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:10px;
+padding:17px 10px;
+border-radius:15px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+font-size:16px;
+transition:.2s;
+box-shadow:0 5px 12px rgba(0,0,0,.10);
+}
+
+.social:hover{
+transform:translateY(-3px);
+}
+
+.social-icon{
+width:36px;
+height:36px;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:21px;
+font-weight:bold;
+background:rgba(255,255,255,.18);
+}
+
+/* الألوان */
+
+.whatsapp{
+background:#25D366;
+}
+
+.facebook{
+background:#1877F2;
+}
+
+.x{
+background:#111111;
+}
+
+.instagram{
+background:linear-gradient(135deg,#833AB4,#E1306C,#F77737,#FCAF45);
+}
+
+/* =========================
+   WHATSAPP NUMBERS
+========================= */
+
+.contact-section{
+margin-top:32px;
+}
+
+.contact-item{
+display:flex;
+align-items:center;
+gap:15px;
+background:#f8fafc;
+border:1px solid #e1e6ec;
+border-radius:16px;
+padding:15px;
+margin-top:12px;
+text-decoration:none;
+color:#17202a;
+transition:.2s;
+}
+
+.contact-item:hover{
+border-color:#25D366;
+transform:translateY(-2px);
+}
+
+/* شعار واتساب الحديث */
+
+.whatsapp-icon{
+width:56px;
+height:56px;
+min-width:56px;
+border-radius:50%;
+background:#25D366;
+display:flex;
+align-items:center;
+justify-content:center;
+box-shadow:0 5px 15px rgba(37,211,102,.35);
+}
+
+.whatsapp-icon svg{
+width:34px;
+height:34px;
+display:block;
+}
+
+.contact-info{
+flex:1;
+}
+
+.contact-label{
+font-size:13px;
+color:#777;
+margin-bottom:5px;
+}
+
+.contact-number{
+font-size:18px;
+font-weight:bold;
+color:#092b62;
+direction:ltr;
+text-align:right;
+}
+
+/* =========================
+   EMAIL
+========================= */
+
+.email-box{
+margin-top:28px;
+background:#eef5ff;
+border-right:5px solid #0b5ed7;
+border-radius:12px;
+padding:18px;
+text-align:center;
+line-height:2;
+}
+
+.email{
+font-weight:bold;
+color:#092b62;
+direction:ltr;
+}
+
+/* =========================
+   ADDRESS
+========================= */
+
+.address{
+margin-top:20px;
+background:#f8fafc;
+border:1px solid #e1e6ec;
+border-radius:13px;
+padding:18px;
+text-align:center;
+line-height:2;
+color:#17345f;
+}
+
+/* =========================
+   HOURS
+========================= */
+
+.hours{
+margin-top:20px;
+background:#fff8e6;
+border-right:5px solid #f0ad00;
+border-radius:12px;
+padding:17px;
+text-align:center;
+font-weight:bold;
+color:#684d00;
+line-height:1.9;
+}
+
+/* =========================
+   NOTE
+========================= */
+
+.note{
+margin-top:20px;
+background:#eef5ff;
+border-right:4px solid #0b5ed7;
+border-radius:10px;
+padding:15px;
+font-size:14px;
+line-height:1.9;
+color:#17345f;
+text-align:center;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+background:#071d43;
+color:white;
+text-align:center;
+padding:30px 15px;
+}
+
+.footer-logo{
+font-size:23px;
+font-weight:bold;
+}
+
+.footer-text{
+margin-top:8px;
+color:#d9e0ea;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+.logo{
+font-size:32px;
+}
+
+.back-home{
+top:12px;
+right:12px;
+font-size:13px;
+padding:8px 11px;
+}
+
+.card{
+padding:20px 15px;
+}
+
+.social{
+font-size:14px;
+padding:15px 7px;
+}
+
+.social-icon{
+width:32px;
+height:32px;
+font-size:19px;
+}
+
+.contact-number{
+font-size:16px;
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<a href="index.html" class="back-home">
+← الرئيسية
+</a>
+
+<div class="logo">
+AFG <span>TRAVEL</span>
+</div>
+
+<div class="tagline">
+للسفر والسياحة ✈️
+</div>
+
+</header>
+
+
+<div class="container">
+
+<div class="card">
+
+
+<h1>
+📞 تواصل معنا
+</h1>
+
+
+<div class="intro">
+
+يسعدنا تواصلكم مع AFG TRAVEL.
+
+<br>
+
+للحجز والاستفسار، يمكنكم التواصل معنا عبر وسائل التواصل التالية.
+
+</div>
+
+
+<!-- =========================
+     SOCIAL MEDIA
+========================= -->
+
+<div class="section-title">
+🌐 تابعنا وتواصل معنا
+</div>
+
+
+<div class="social-grid">
+
+
+<!-- واتساب -->
+
+<a
+href="https://wa.me/249967214147"
+target="_blank"
+class="social whatsapp"
+>
+
+<span class="social-icon">
+💬
+</span>
+
+واتساب
+
+</a>
+
+
+<!-- فيسبوك -->
+
+<a
+href="https://www.facebook.com/share/19cfFCCJqh/"
+target="_blank"
+class="social facebook"
+>
+
+<span class="social-icon">
+f
+</span>
+
+فيسبوك
+
+</a>
+
+
+<!-- X -->
+
+<a
+href="https://x.com/AFG_TRAVEl"
+target="_blank"
+class="social x"
+>
+
+<span class="social-icon">
+𝕏
+</span>
+
+منصة X
+
+</a>
+
+
+<!-- Instagram -->
+
+<a
+href="https://www.instagram.com/afg._travel?igsi=MTZ4YjA3Y2Vjam1ncQ=="
+target="_blank"
+class="social instagram"
+>
+
+<span class="social-icon">
+◎
+</span>
+
+إنستغرام
+
+</a>
+
+
+</div>
+
+
+<!-- =========================
+     WHATSAPP NUMBERS
+========================= -->
+
+<div class="section-title contact-section">
+
+📱 تواصل معنا مباشرة عبر واتساب
+
+</div>
+
+
+<!-- السودان -->
+
+<a
+href="https://wa.me/249967214147"
+target="_blank"
+class="contact-item"
+>
+
+<div class="whatsapp-icon">
+
+<svg viewBox="0 0 32 32">
+
+<path
+fill="white"
+d="M16 3.2C8.93 3.2 3.2 8.93 3.2 16c0 2.26.59 4.38 1.63 6.22L3.1 28.8l6.75-1.72A12.74 12.74 0 0 0 16 28.8h.01C23.08 28.8 28.8 23.07 28.8 16S23.07 3.2 16 3.2zm0 23.3h-.01a10.5 10.5 0 0 1-5.35-1.47l-.38-.23-4.01 1.02 1.07-3.91-.25-.4A10.48 10.48 0 1 1 16 26.5z"/>
+
+<path
+fill="white"
+d="M21.3 18.4c-.29-.15-1.7-.84-1.96-.94-.26-.1-.45-.15-.64.15-.19.29-.73.94-.89 1.13-.16.19-.33.21-.61.07-.29-.15-1.2-.44-2.29-1.41-.85-.76-1.43-1.69-1.6-1.97-.17-.29-.02-.44.13-.58.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.54c-.19 0-.51.07-.78.36-.27.29-1.02 1-1.02 2.43s1.04 2.82 1.18 3.01c.15.19 2.04 3.13 4.96 4.39.69.3 1.23.48 1.65.62.7.22 1.34.19 1.84.11.56-.08 1.68-.69 1.92-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34z"/>
+
+</svg>
+
+</div>
+
+
+<div class="contact-info">
+
+<div class="contact-label">
+واتساب السودان
+</div>
+
+<div class="contact-number">
++249 967 214 147
+</div>
+
+</div>
+
+</a>
+
+
+<!-- السعودية -->
+
+<a
+href="https://wa.me/966562014426"
+target="_blank"
+class="contact-item"
+>
+
+<div class="whatsapp-icon">
+
+<svg viewBox="0 0 32 32">
+
+<path
+fill="white"
+d="M16 3.2C8.93 3.2 3.2 8.93 3.2 16c0 2.26.59 4.38 1.63 6.22L3.1 28.8l6.75-1.72A12.74 12.74 0 0 0 16 28.8h.01C23.08 28.8 28.8 23.07 28.8 16S23.07 3.2 16 3.2zm0 23.3h-.01a10.5 10.5 0 0 1-5.35-1.47l-.38-.23-4.01 1.02 1.07-3.91-.25-.4A10.48 10.48 0 1 1 16 26.5z"/>
+
+<path
+fill="white"
+d="M21.3 18.4c-.29-.15-1.7-.84-1.96-.94-.26-.1-.45-.15-.64.15-.19.29-.73.94-.89 1.13-.16.19-.33.21-.61.07-.29-.15-1.2-.44-2.29-1.41-.85-.76-1.43-1.69-1.6-1.97-.17-.29-.02-.44.13-.58.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.54c-.19 0-.51.07-.78.36-.27.29-1.02 1-1.02 2.43s1.04 2.82 1.18 3.01c.15.19 2.04 3.13 4.96 4.39.69.3 1.23.48 1.65.62.7.22 1.34.19 1.84.11.56-.08 1.68-.69 1.92-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34z"/>
+
+</svg>
+
+</div>
+
+
+<div class="contact-info">
+
+<div class="contact-label">
+واتساب السعودية
+</div>
+
+<div class="contact-number">
++966 562 014 426
+</div>
+
+</div>
+
+</a>
+
+
+<!-- =========================
+     EMAIL
+========================= -->
+
+<div class="email-box">
+
+📧 <strong>البريد الإلكتروني</strong>
+
+<br>
+
+<div class="email">
+afgtravel25@gmail.com
+</div>
+
+<div class="email">
+info@afgtravel.com
+</div>
+
+</div>
+
+
+<!-- =========================
+     ADDRESS
+========================= -->
+
+<div class="address">
+
+📍 <strong>عنوان المكتب</strong>
+
+<br>
+
+الخرطوم – العمارات – شارع 21
+
+<br>
+
+عمارة 11 – الطابق السادس
+
+<br>
+
+مكتب رقم 2
+
+</div>
+
+
+<!-- =========================
+     HOURS
+========================= -->
+
+<div class="hours">
+
+🕐 متاحون لخدمتكم على مدار 24 ساعة
+
+<br>
+
+📅 طوال أيام الأسبوع
+
+</div>
+
+
+<!-- =========================
+     NOTE
+========================= -->
+
+<div class="note">
+
+📌 يمكنك إرسال طلب حجز الطيران أو العمرة أو التأشيرات أو الفنادق من الصفحات المخصصة لكل خدمة.
+
+<br>
+
+وسيتم التواصل معك لمراجعة الطلب ومعرفة الأسعار والتوافر الحالي.
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<footer>
+
+<div class="footer-logo">
+AFG TRAVEL
+</div>
+
+<div class="footer-text">
+للسفر والسياحة ✈️
+</div>
+
+<div class="footer-text">
+متاحون لخدمتكم على مدار 24 ساعة
+</div>
+
+</footer>
+
+
+</body>
+
+</html>
