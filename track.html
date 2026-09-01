@@ -1,0 +1,1449 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0"><title>AFG TRAVEL | متابعة الطلب</title><style>
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:Arial,Tahoma,sans-serif;
+background:#f7f9fc;
+color:#172b4d;
+min-height:100vh;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+}
+
+.container{
+width:92%;
+max-width:1100px;
+margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+header{
+background:
+linear-gradient(135deg,rgba(3,27,64,.96),rgba(6,82,169,.90)),
+url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=2000&q=90")
+center/cover;
+
+color:#fff;
+padding-bottom:70px;
+}
+
+.nav{
+padding:18px 5%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:rgba(3,24,58,.35);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.logo{
+font-size:29px;
+font-weight:900;
+color:#fff;
+letter-spacing:1px;
+}
+
+.logo span{
+color:#e9b340;
+}
+
+.nav-links{
+display:flex;
+gap:22px;
+align-items:center;
+}
+
+.nav-links a{
+color:#fff;
+font-size:14px;
+font-weight:bold;
+transition:.2s;
+}
+
+.nav-links a:hover{
+color:#e9b340;
+}
+
+.nav-contact{
+color:#fff;
+border:1px solid #e9b340;
+padding:9px 15px;
+border-radius:9px;
+font-weight:bold;
+font-size:13px;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+text-align:center;
+padding:75px 15px 45px;
+}
+
+.badge{
+display:inline-block;
+padding:9px 18px;
+border-radius:30px;
+background:rgba(255,255,255,.13);
+border:1px solid rgba(255,255,255,.25);
+font-size:13px;
+margin-bottom:18px;
+}
+
+.hero h1{
+font-size:46px;
+font-weight:900;
+line-height:1.3;
+}
+
+.hero h1 span{
+color:#e9b340;
+}
+
+.hero p{
+max-width:650px;
+margin:15px auto 0;
+font-size:17px;
+line-height:1.9;
+color:#e0e9f6;
+}
+
+/* ================= TRACK ================= */
+
+.track-section{
+padding:55px 0 80px;
+}
+
+.track-card{
+background:#fff;
+border:2px solid #e9b340;
+border-radius:23px;
+box-shadow:0 18px 55px rgba(0,30,80,.13);
+overflow:hidden;
+max-width:850px;
+margin:auto;
+}
+
+.track-head{
+background:linear-gradient(135deg,#062453,#0b5ed7);
+color:#fff;
+padding:25px;
+text-align:center;
+}
+
+.track-head h2{
+font-size:25px;
+margin-bottom:8px;
+}
+
+.track-head p{
+font-size:13px;
+color:#dce8f8;
+}
+
+.track-body{
+padding:30px;
+}
+
+.input-label{
+display:block;
+font-weight:bold;
+color:#092b62;
+font-size:14px;
+margin-bottom:8px;
+}
+
+.track-input{
+width:100%;
+height:56px;
+border:2px solid #dfe6ef;
+border-radius:12px;
+padding:0 17px;
+font-size:17px;
+font-weight:bold;
+color:#20365e;
+outline:none;
+direction:ltr;
+text-align:center;
+letter-spacing:1px;
+background:#f9fbff;
+}
+
+.track-input:focus{
+border-color:#0967df;
+box-shadow:0 0 0 4px rgba(9,103,223,.08);
+}
+
+.track-button{
+width:100%;
+height:55px;
+margin-top:14px;
+border:0;
+border-radius:12px;
+background:linear-gradient(135deg,#e9b340,#f4c64d);
+color:#062453;
+font-size:17px;
+font-weight:900;
+cursor:pointer;
+box-shadow:0 7px 20px rgba(233,179,64,.3);
+transition:.2s;
+}
+
+.track-button:hover{
+transform:translateY(-2px);
+}
+
+.example{
+text-align:center;
+font-size:11px;
+color:#7a8799;
+margin-top:9px;
+}
+
+/* ================= RESULT ================= */
+
+.result{
+display:none;
+margin-top:25px;
+}
+
+.result.show{
+display:block;
+}
+
+.request-number{
+background:#062453;
+color:#fff;
+border-radius:13px;
+padding:17px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:12px;
+font-weight:900;
+flex-wrap:wrap;
+}
+
+.request-number span{
+color:#e9b340;
+font-size:19px;
+letter-spacing:1px;
+direction:ltr;
+}
+
+.status-box{
+margin-top:15px;
+padding:18px;
+border-radius:13px;
+background:#fff8df;
+border:1px solid #efd27a;
+text-align:center;
+}
+
+.status-label{
+font-size:12px;
+color:#80631d;
+margin-bottom:6px;
+}
+
+.status{
+font-size:22px;
+font-weight:900;
+color:#d38e00;
+}
+
+.details{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-top:15px;
+}
+
+.detail{
+background:#f7faff;
+border:1px solid #e1e8f2;
+border-radius:11px;
+padding:14px;
+}
+
+.detail small{
+display:block;
+font-size:11px;
+color:#7b8798;
+margin-bottom:6px;
+}
+
+.detail strong{
+color:#092b62;
+font-size:14px;
+word-break:break-word;
+}
+
+.note{
+margin-top:15px;
+background:#f4f8ff;
+border:1px solid #dce7f7;
+border-radius:12px;
+padding:15px;
+font-size:13px;
+color:#40546f;
+line-height:1.9;
+}
+
+.actions{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin-top:17px;
+}
+
+.action{
+flex:1;
+min-width:180px;
+border:0;
+border-radius:10px;
+padding:14px;
+font-weight:900;
+font-size:14px;
+cursor:pointer;
+text-align:center;
+}
+
+.whatsapp-btn{
+background:#25D366;
+color:#fff;
+}
+
+.home-btn{
+background:#eef3f9;
+color:#20365e;
+}
+
+.clear-btn{
+background:#fff0f0;
+color:#a83232;
+}
+
+/* ================= NO RESULT ================= */
+
+.no-result{
+display:none;
+margin-top:20px;
+background:#fff2f2;
+border:1px solid #f1bcbc;
+border-radius:12px;
+padding:16px;
+color:#a83232;
+text-align:center;
+font-weight:bold;
+line-height:1.8;
+}
+
+/* ================= INFO ================= */
+
+.info-section{
+padding:0 0 70px;
+}
+
+.info-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.info-card{
+background:#fff;
+border-radius:18px;
+padding:25px 18px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,30,80,.07);
+border:1px solid #edf1f6;
+}
+
+.info-icon{
+font-size:35px;
+margin-bottom:12px;
+}
+
+.info-card h3{
+color:#092b62;
+font-size:17px;
+margin-bottom:8px;
+}
+
+.info-card p{
+font-size:12px;
+color:#6c7789;
+line-height:1.8;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#031a3d;
+color:#fff;
+padding:40px 0 18px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:1.3fr 1fr 1fr;
+gap:30px;
+}
+
+footer h3{
+color:#e9b340;
+margin-bottom:13px;
+}
+
+footer p,
+footer a{
+color:#cbd7e9;
+line-height:2;
+font-size:13px;
+}
+
+.footer-bottom{
+text-align:center;
+border-top:1px solid rgba(255,255,255,.13);
+margin-top:25px;
+padding-top:18px;
+color:#aebbd0;
+font-size:12px;
+}
+
+/* ================= FLOATING ================= */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+left:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:#25D366;
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:29px;
+z-index:200;
+box-shadow:0 7px 25px rgba(0,0,0,.25);
+}
+
+.afg-floating{
+position:fixed;
+bottom:90px;
+left:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:linear-gradient(135deg,#06204e,#0967df);
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:900;
+border:3px solid #fff;
+z-index:200;
+box-shadow:0 7px 25px rgba(0,0,0,.25);
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:800px){
+
+.nav-links{
+display:none;
+}
+
+.nav{
+padding:14px 4%;
+}
+
+.logo{
+font-size:21px;
+}
+
+.nav-contact{
+font-size:11px;
+padding:7px 10px;
+}
+
+.hero{
+padding:55px 15px 35px;
+}
+
+.hero h1{
+font-size:31px;
+}
+
+.hero p{
+font-size:13px;
+}
+
+.track-section{
+padding:35px 0 55px;
+}
+
+.track-card{
+border-radius:17px;
+}
+
+.track-head{
+padding:20px 14px;
+}
+
+.track-head h2{
+font-size:19px;
+}
+
+.track-head p{
+font-size:11px;
+}
+
+.track-body{
+padding:17px;
+}
+
+.track-input{
+height:49px;
+font-size:14px;
+}
+
+.track-button{
+height:49px;
+font-size:13px;
+}
+
+.details{
+grid-template-columns:1fr 1fr;
+gap:8px;
+}
+
+.detail{
+padding:10px;
+}
+
+.detail small{
+font-size:9px;
+}
+
+.detail strong{
+font-size:11px;
+}
+
+.status{
+font-size:18px;
+}
+
+.request-number{
+padding:13px;
+font-size:11px;
+}
+
+.request-number span{
+font-size:14px;
+}
+
+.action{
+width:100%;
+min-width:100%;
+font-size:12px;
+}
+
+.info-grid{
+grid-template-columns:1fr;
+}
+
+.footer-grid{
+grid-template-columns:1fr 1fr;
+}
+
+footer p,
+footer a{
+font-size:10px;
+}
+
+.afg-floating,
+.whatsapp{
+width:49px;
+height:49px;
+}
+
+.afg-floating{
+bottom:76px;
+}
+
+.whatsapp{
+bottom:16px;
+}
+
+}
+
+@media(max-width:450px){
+
+.details{
+grid-template-columns:1fr;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.track-card,
+.info-card{
+animation:fadeUp .7s ease;
+}
+
+</style></head><body><!-- ================= HEADER ================= --><header><nav class="nav"><a href="index.html" class="logo">
+AFG <span>TRAVEL</span>
+</a><div class="nav-links"><a href="index.html">الرئيسية</a>
+
+<a href="hotel.html">🏨 الفنادق</a>
+
+<a href="umrah.html">🕋 العمرة</a>
+
+<a href="visa.html">🛂 التأشيرات</a>
+
+<a href="track.html">🔎 متابعة الطلب</a>
+
+<a href="index.html#contact">تواصل معنا</a>
+
+</div><a
+href="https://wa.me/249967214147"
+target="_blank"
+rel="noopener"
+class="nav-contact">
+
+واتساب
+
+</a></nav><div class="hero"><div class="badge">
+🔖 خدمة متابعة الطلبات
+</div><h1>
+تابع طلبك مع
+<br>
+<span>AFG TRAVEL</span>
+</h1><p>
+أدخل رقم الطلب الخاص بك لمعرفة حالة الطلب والتفاصيل المسجلة لدى AFG TRAVEL.
+</p></div></header><!-- ================= TRACK ================= --><section class="track-section"><div class="container"><div class="track-card"><div class="track-head"><h2>
+🔎 متابعة طلب السفر
+</h2><p>
+أدخل رقم الطلب كما استلمته من AFG TRAVEL
+</p></div><div class="track-body"><label class="input-label">
+رقم الطلب
+</label><input
+id="trackInput"
+class="track-input"
+type="text"
+placeholder="AFG-UM-260901-123456-789"
+autocomplete="off"
+
+«»
+
+<button
+class="track-button"
+type="button"
+id="trackButton">
+
+🔍 البحث عن الطلب
+
+</button><div class="example">
+يمكنك إدخال رقم العمرة أو التأشيرة أو أي طلب آخر تم إنشاؤه على هذا الجهاز.
+</div><div id="noResult" class="no-result">⚠️ لم يتم العثور على طلب بهذا الرقم.
+
+<br>تأكد من كتابة رقم الطلب بشكل صحيح، أو تواصل معنا عبر واتساب.
+
+</div><div id="result" class="result"><div class="request-number"><div>
+رقم الطلب:
+<span id="resultNumber">—</span>
+</div></div><div class="status-box"><div class="status-label">
+حالة الطلب الحالية
+</div><div class="status" id="resultStatus">
+قيد المراجعة
+</div></div><div class="details"><div class="detail"><small>
+نوع الطلب
+</small><strong id="resultType">
+—
+</strong></div><div class="detail"><small>
+الاسم
+</small><strong id="resultName">
+—
+</strong></div><div class="detail"><small>
+الهاتف
+</small><strong id="resultPhone">
+—
+</strong></div><div class="detail"><small>
+الوجهة / الخدمة
+</small><strong id="resultDestination">
+—
+</strong></div><div class="detail"><small>
+تاريخ السفر
+</small><strong id="resultDepart">
+—
+</strong></div><div class="detail"><small>
+التفاصيل
+</small><strong id="resultDetailsText">
+—
+</strong></div></div><div class="note">📌
+<strong>ملاحظة:</strong>
+
+حالة الطلب المعروضة هي حالة متابعة الطلب فقط،
+ولا تعتبر تأكيدًا نهائيًا للحجز أو السعر حتى يتم تأكيده
+من وكالة AFG TRAVEL.
+
+</div><div class="actions"><a
+href="https://wa.me/249967214147"
+target="_blank"
+rel="noopener"
+class="action whatsapp-btn">
+
+💬 التواصل مع الوكالة
+
+</a><a
+href="index.html"
+class="action home-btn">
+
+🏠 العودة للرئيسية
+
+</a><button
+type="button"
+id="clearButton"
+class="action clear-btn">
+
+🗑️ مسح النتيجة
+
+</button></div></div></div></div></div></section><!-- ================= INFO ================= --><section class="info-section"><div class="container"><div class="info-grid"><div class="info-card"><div class="info-icon">
+🔖
+</div><h3>
+احتفظ برقم الطلب
+</h3><p>
+احتفظ برقم طلبك لاستخدامه في متابعة حالة الطلب لاحقًا.
+</p></div><div class="info-card"><div class="info-icon">
+📱
+</div><h3>
+تواصل معنا
+</h3><p>
+إذا احتجت إلى أي مساعدة يمكنك التواصل مباشرة مع وكالة AFG TRAVEL.
+</p></div><div class="info-card"><div class="info-icon">
+🛡️
+</div><h3>
+خدمة موثوقة
+</h3><p>
+نحرص على متابعة طلبات العملاء والتواصل معهم بشأن المستجدات.
+</p></div></div></div></section><!-- ================= FOOTER ================= --><footer><div class="container"><div class="footer-grid"><div><h3>
+AFG TRAVEL
+</h3><p>
+للسفر والسياحة ✈️
+</p><p>
+سفرك معنا... تجربة تليق بك.
+</p></div><div><h3>
+روابط سريعة
+</h3><p>
+<a href="index.html">
+الرئيسية
+</a>
+</p><p>
+<a href="hotel.html">
+🏨 الفنادق
+</a>
+</p><p>
+<a href="umrah.html">
+🕋 العمرة
+</a>
+</p><p>
+<a href="visa.html">
+🛂 التأشيرات
+</a>
+</p><p>
+<a href="track.html">
+🔎 متابعة الطلب
+</a>
+</p></div><div><h3>
+بيانات الوكالة
+</h3><p>
+📧 afgtravel25@gmail.com
+</p><p>
+📧 info@afgtravel.com
+</p><p>
+📱 +249 967 214 147
+</p><p>
+📍 الخرطوم - العمارات - شارع 21
+</p></div></div><div class="footer-bottom">© 2026 AFG TRAVEL — جميع الحقوق محفوظة
+
+</div></div></footer><!-- ================= FLOATING ================= --><a
+href="index.html"
+class="afg-floating"
+aria-label="العودة إلى الرئيسية">
+
+AFG
+
+</a><a
+href="https://wa.me/249967214147"
+target="_blank"
+rel="noopener"
+class="whatsapp"
+aria-label="واتساب AFG TRAVEL">
+
+💬
+
+</a><script>
+
+/* =====================================================
+   AFG TRAVEL
+   نظام متابعة موحد للطلبات
+===================================================== */
+
+const WA_NUMBER = "249967214147";
+
+
+/* ================================
+   عناصر الصفحة
+================================ */
+
+const trackInput =
+document.getElementById("trackInput");
+
+const trackButton =
+document.getElementById("trackButton");
+
+const clearButton =
+document.getElementById("clearButton");
+
+const result =
+document.getElementById("result");
+
+const noResult =
+document.getElementById("noResult");
+
+
+/* ================================
+   تنظيف رقم الطلب
+================================ */
+
+function normalizeOrderNumber(value){
+
+return String(value || "")
+.trim()
+.toUpperCase()
+.replace(/\s+/g,"");
+
+}
+
+
+/* ================================
+   قراءة JSON بأمان
+================================ */
+
+function readJSON(key){
+
+try{
+
+const value =
+localStorage.getItem(key);
+
+if(!value){
+return null;
+}
+
+return JSON.parse(value);
+
+}catch(error){
+
+console.warn(
+"AFG TRAVEL storage error:",
+error
+);
+
+return null;
+
+}
+
+}
+
+
+/* ================================
+   البحث عن الطلب
+================================ */
+
+function findOrder(orderNumber){
+
+const number =
+normalizeOrderNumber(orderNumber);
+
+if(!number){
+return null;
+}
+
+
+/*
+   1
+   الصيغة الموحدة الجديدة
+*/
+
+let data =
+readJSON("AFG_ORDER_"+number);
+
+if(data){
+return normalizeOrderData(data,number);
+}
+
+
+/*
+   2
+   طلبات التأشيرات
+   إذا تم تطوير صفحة التأشيرة
+   لتخزين بياناتها
+*/
+
+data =
+readJSON("AFG_VISA_ORDER_"+number);
+
+if(data){
+return normalizeOrderData(data,number);
+}
+
+
+/*
+   3
+   الصيغة القديمة للطلبات العامة
+*/
+
+data =
+readJSON("AFG_REQUEST_"+number);
+
+if(data){
+return normalizeOrderData(data,number);
+}
+
+
+/*
+   4
+   البحث عن آخر طلب عمرة
+*/
+
+const lastUmrah =
+localStorage.getItem("AFG_LAST_ORDER");
+
+if(
+lastUmrah &&
+normalizeOrderNumber(lastUmrah) === number
+){
+
+data =
+readJSON("AFG_ORDER_"+number);
+
+if(data){
+return normalizeOrderData(data,number);
+}
+
+}
+
+
+/*
+   5
+   البحث عن آخر طلب عام
+*/
+
+const lastRequest =
+localStorage.getItem("AFG_LAST_REQUEST");
+
+if(
+lastRequest &&
+normalizeOrderNumber(lastRequest) === number
+){
+
+data =
+readJSON("AFG_REQUEST_"+number);
+
+if(data){
+return normalizeOrderData(data,number);
+}
+
+}
+
+
+/*
+   6
+   البحث عن آخر طلب تأشيرة
+*/
+
+const lastVisa =
+localStorage.getItem("AFG_LAST_VISA_ORDER");
+
+if(
+lastVisa &&
+normalizeOrderNumber(lastVisa) === number
+){
+
+data =
+readJSON("AFG_VISA_ORDER_"+number);
+
+if(data){
+return normalizeOrderData(data,number);
+}
+
+}
+
+
+/*
+   7
+   محاولة البحث في جميع مفاتيح التخزين
+   لدعم الملفات القديمة
+*/
+
+try{
+
+for(
+let i=0;
+i<localStorage.length;
+i++
+){
+
+const key =
+localStorage.key(i);
+
+if(!key){
+continue;
+}
+
+if(
+key.startsWith("AFG_ORDER_") ||
+key.startsWith("AFG_VISA_ORDER_") ||
+key.startsWith("AFG_REQUEST_")
+){
+
+const saved =
+readJSON(key);
+
+if(!saved){
+continue;
+}
+
+const savedNumber =
+normalizeOrderNumber(
+saved.order ||
+saved.orderNumber ||
+saved.requestNumber ||
+""
+);
+
+if(savedNumber === number){
+
+return normalizeOrderData(
+saved,
+number
+);
+
+}
+
+}
+
+}
+
+}catch(error){
+
+console.warn(error);
+
+}
+
+
+return null;
+
+}
+
+
+/* ================================
+   توحيد بيانات الطلب
+================================ */
+
+function normalizeOrderData(data,number){
+
+const type =
+data.type ||
+data.requestType ||
+(
+number.startsWith("AFG-UM-")
+?
+"عمرة"
+:
+number.startsWith("AFG-VISA-")
+?
+"تأشيرة"
+:
+"طلب سفر"
+);
+
+
+let name =
+data.name ||
+data.fullName ||
+data.customerName ||
+"غير محدد";
+
+
+let phone =
+data.phone ||
+data.customerPhone ||
+"غير محدد";
+
+
+let destination =
+data.destination ||
+data.to ||
+data.country ||
+"غير محدد";
+
+
+let depart =
+data.travelDate ||
+data.depart ||
+data.date ||
+"غير محدد";
+
+
+let details = "";
+
+
+if(type === "عمرة"){
+
+details =
+[
+data.people ? "👥 "+data.people : "",
+data.package ? "🎁 "+data.package : "",
+data.duration ? "🌙 "+data.duration : "",
+data.hotelLevel ? "🏨 "+data.hotelLevel : "",
+data.transport ? "🚐 "+data.transport : "",
+data.flight ? "✈️ "+data.flight : ""
+]
+.filter(Boolean)
+.join(" | ");
+
+if(!details){
+details="طلب عمرة";
+}
+
+}
+
+
+else if(type === "تأشيرة"){
+
+details =
+[
+data.visaType || data.typeVisa || "",
+data.applicants
+?
+"👥 "+data.applicants+" متقدم"
+:
+"",
+data.stayDuration
+?
+"🌙 "+data.stayDuration
+:
+""
+]
+.filter(Boolean)
+.join(" | ");
+
+if(!details){
+details="طلب تأشيرة";
+}
+
+}
+
+
+else{
+
+details =
+data.details ||
+data.notes ||
+(
+data.from && data.to
+?
+data.from+" → "+data.to
+:
+"تفاصيل الطلب"
+);
+
+}
+
+
+return {
+
+order:
+data.order ||
+data.orderNumber ||
+data.requestNumber ||
+number,
+
+status:
+data.status ||
+"قيد المراجعة",
+
+type:type,
+
+name:name,
+
+phone:phone,
+
+destination:destination,
+
+depart:depart,
+
+details:details
+
+};
+
+}
+
+
+/* ================================
+   عرض الطلب
+================================ */
+
+function showOrder(data){
+
+document.getElementById(
+"resultNumber"
+).textContent =
+data.order;
+
+
+document.getElementById(
+"resultStatus"
+).textContent =
+data.status;
+
+
+document.getElementById(
+"resultType"
+).textContent =
+data.type;
+
+
+document.getElementById(
+"resultName"
+).textContent =
+data.name;
+
+
+document.getElementById(
+"resultPhone"
+).textContent =
+data.phone;
+
+
+document.getElementById(
+"resultDestination"
+).textContent =
+data.destination;
+
+
+document.getElementById(
+"resultDepart"
+).textContent =
+data.depart;
+
+
+document.getElementById(
+"resultDetailsText"
+).textContent =
+data.details;
+
+
+result.classList.add("show");
+
+noResult.style.display="none";
+
+
+setTimeout(function(){
+
+result.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+
+},100);
+
+}
+
+
+/* ================================
+   البحث
+================================ */
+
+function trackRequest(){
+
+const number =
+normalizeOrderNumber(
+trackInput.value
+);
+
+
+result.classList.remove("show");
+
+noResult.style.display="none";
+
+
+if(!number){
+
+noResult.innerHTML =
+"⚠️ يرجى إدخال رقم الطلب أولاً."+
+"<br>"+
+"مثال: AFG-UM-260901-123456-789";
+
+noResult.style.display="block";
+
+return;
+
+}
+
+
+const data =
+findOrder(number);
+
+
+if(!data){
+
+noResult.innerHTML =
+"⚠️ لم يتم العثور على طلب بهذا الرقم."+
+"<br><br>"+
+"تأكد من كتابة رقم الطلب بشكل صحيح."+
+"<br>"+
+"إذا كنت قد أرسلت الطلب من جهاز آخر، يرجى التواصل مع الوكالة عبر واتساب.";
+
+noResult.style.display="block";
+
+return;
+
+}
+
+
+showOrder(data);
+
+}
+
+
+/* ================================
+   زر البحث
+================================ */
+
+trackButton.addEventListener(
+"click",
+trackRequest
+);
+
+
+/* ================================
+   Enter
+================================ */
+
+trackInput.addEventListener(
+"keydown",
+function(event){
+
+if(event.key === "Enter"){
+
+event.preventDefault();
+
+trackRequest();
+
+}
+
+});
+
+
+/* ================================
+   مسح
+================================ */
+
+clearButton.addEventListener(
+"click",
+function(){
+
+trackInput.value="";
+
+result.classList.remove("show");
+
+noResult.style.display="none";
+
+trackInput.focus();
+
+});
+
+
+
+/* =====================================================
+   قراءة آخر رقم طلب تلقائيًا
+===================================================== */
+
+try{
+
+const possibleLastOrders = [
+
+localStorage.getItem(
+"AFG_LAST_ORDER"
+),
+
+localStorage.getItem(
+"AFG_LAST_VISA_ORDER"
+),
+
+localStorage.getItem(
+"AFG_LAST_REQUEST"
+)
+
+].filter(Boolean);
+
+
+if(
+possibleLastOrders.length === 1
+){
+
+trackInput.value =
+possibleLastOrders[0];
+
+}
+
+}catch(error){
+
+console.warn(error);
+
+}
+
+</script></body>
+</html>

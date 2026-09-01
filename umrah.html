@@ -1,0 +1,2079 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>AFG TRAVEL | خدمات العمرة</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+font-family:Arial,Tahoma,sans-serif;
+background:#f7f9fc;
+color:#172b4d;
+overflow-x:hidden;
+}
+
+a{text-decoration:none}
+
+.container{
+width:92%;
+max-width:1200px;
+margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+header{
+min-height:650px;
+position:relative;
+color:#fff;
+overflow:hidden;
+
+background:
+linear-gradient(
+90deg,
+rgba(2,23,57,.90),
+rgba(5,60,130,.48)
+),
+url("https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=1800&q=85")
+center/cover;
+}
+
+.nav{
+position:absolute;
+top:0;
+right:0;
+left:0;
+z-index:50;
+
+padding:18px 5%;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+background:rgba(3,24,58,.48);
+backdrop-filter:blur(12px);
+
+border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.logo{
+font-size:28px;
+font-weight:900;
+letter-spacing:1px;
+color:#fff;
+}
+
+.logo span{
+color:#e9b340;
+}
+
+.nav-links{
+display:flex;
+gap:20px;
+align-items:center;
+}
+
+.nav-links a{
+color:#fff;
+font-weight:bold;
+font-size:14px;
+}
+
+.nav-links a:hover{
+color:#e9b340;
+}
+
+.nav-contact{
+color:#062453;
+border:1px solid #e9b340;
+background:#e9b340;
+padding:10px 16px;
+border-radius:10px;
+font-weight:900;
+}
+
+.hero{
+padding-top:145px;
+text-align:center;
+width:92%;
+max-width:900px;
+margin:auto;
+}
+
+.badge{
+display:inline-block;
+padding:9px 18px;
+border-radius:30px;
+background:rgba(255,255,255,.13);
+border:1px solid rgba(255,255,255,.28);
+margin-bottom:17px;
+font-size:14px;
+}
+
+.hero h1{
+font-size:55px;
+line-height:1.18;
+font-weight:900;
+text-shadow:0 5px 20px rgba(0,0,0,.35);
+}
+
+.hero h1 span{
+color:#e9b340;
+}
+
+.hero p{
+max-width:700px;
+margin:17px auto;
+font-size:19px;
+line-height:1.8;
+color:#edf3fb;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin-top:25px;
+}
+
+.btn{
+padding:13px 25px;
+border-radius:11px;
+font-weight:900;
+font-size:15px;
+transition:.25s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+.gold{
+background:#e9b340;
+color:#062453;
+}
+
+.white{
+background:rgba(255,255,255,.1);
+border:1px solid rgba(255,255,255,.45);
+color:#fff;
+}
+
+/* ================= BOOKING ================= */
+
+.booking{
+margin-top:-55px;
+position:relative;
+z-index:40;
+}
+
+.booking-card{
+background:#fff;
+border:2px solid #e9b340;
+border-radius:23px;
+box-shadow:0 20px 60px rgba(0,32,80,.2);
+padding:27px;
+}
+
+.booking-title{
+text-align:center;
+color:#092b62;
+font-size:25px;
+margin-bottom:22px;
+}
+
+.booking-title span{
+color:#e9b340;
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:14px;
+}
+
+.field label{
+display:block;
+color:#20365e;
+font-size:13px;
+font-weight:900;
+margin-bottom:7px;
+}
+
+.field input,
+.field select,
+.field textarea{
+width:100%;
+border:2px solid #e2e8f1;
+border-radius:10px;
+background:#f9fbff;
+min-height:47px;
+padding:10px 12px;
+outline:none;
+font-size:14px;
+color:#243b60;
+font-family:inherit;
+transition:.2s;
+}
+
+.field textarea{
+height:92px;
+resize:vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+border-color:#e9b340;
+box-shadow:0 0 0 3px rgba(233,179,64,.10);
+}
+
+.full{
+grid-column:1/-1;
+}
+
+.submit{
+width:100%;
+height:54px;
+border:0;
+border-radius:11px;
+
+background:linear-gradient(
+135deg,
+#e9b340,
+#f4c64d
+);
+
+color:#062453;
+font-size:17px;
+font-weight:900;
+cursor:pointer;
+
+box-shadow:0 7px 18px rgba(233,179,64,.3);
+
+transition:.25s;
+}
+
+.submit:hover{
+transform:translateY(-2px);
+}
+
+.form-note{
+text-align:center;
+color:#7b8798;
+font-size:11px;
+margin-top:11px;
+line-height:1.8;
+}
+
+/* ================= FEATURES ================= */
+
+.features{
+padding:45px 0 25px;
+}
+
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:14px;
+}
+
+.feature{
+background:#fff;
+border:1px solid #e2e9f3;
+border-radius:17px;
+padding:22px 14px;
+text-align:center;
+box-shadow:0 9px 28px rgba(0,30,80,.07);
+transition:.3s;
+}
+
+.feature:hover{
+transform:translateY(-5px);
+}
+
+.feature-icon{
+font-size:34px;
+margin-bottom:8px;
+}
+
+.feature h3{
+color:#092b62;
+font-size:16px;
+margin-bottom:6px;
+}
+
+.feature p{
+color:#6d798b;
+font-size:12px;
+line-height:1.7;
+}
+
+/* ================= SECTIONS ================= */
+
+.section{
+padding:70px 0;
+}
+
+.section.alt{
+background:#fff;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:34px;
+}
+
+.section-title small{
+color:#0967df;
+font-weight:bold;
+}
+
+.section-title h2{
+font-size:33px;
+color:#092b62;
+margin:8px 0;
+}
+
+.section-title p{
+color:#707b8b;
+font-size:14px;
+}
+
+/* ================= PACKAGES ================= */
+
+.packages{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.package{
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+border:1px solid #e1e7ef;
+box-shadow:0 12px 35px rgba(0,30,80,.09);
+transition:.3s;
+}
+
+.package:hover{
+transform:translateY(-6px);
+box-shadow:0 18px 45px rgba(0,30,80,.14);
+}
+
+.package-img{
+height:175px;
+background-size:cover;
+background-position:center;
+}
+
+.economy{
+background-image:url(
+"https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?auto=format&fit=crop&w=900&q=85"
+);
+}
+
+.premium{
+background-image:url(
+"https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=900&q=85"
+);
+}
+
+.vip{
+background-image:url(
+"https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=85"
+);
+}
+
+.package-body{
+padding:19px;
+}
+
+.package-body h3{
+color:#092b62;
+font-size:21px;
+margin-bottom:7px;
+}
+
+.package-body p{
+color:#6d798b;
+font-size:13px;
+line-height:1.7;
+margin-bottom:12px;
+}
+
+.package-list{
+list-style:none;
+color:#40546f;
+font-size:12px;
+line-height:2.1;
+}
+
+.package-list li:before{
+content:"✓";
+color:#e0a52c;
+font-weight:900;
+margin-left:7px;
+}
+
+/* ================= SERVICES ================= */
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:17px;
+}
+
+.service{
+background:#f9fbff;
+border:1px solid #e1e8f2;
+border-radius:17px;
+padding:24px 15px;
+text-align:center;
+}
+
+.service-icon{
+font-size:36px;
+margin-bottom:9px;
+}
+
+.service h3{
+color:#092b62;
+font-size:16px;
+margin-bottom:7px;
+}
+
+.service p{
+color:#6d798b;
+font-size:12px;
+line-height:1.7;
+}
+
+/* ================= INFO ================= */
+
+.info-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:20px;
+}
+
+.info-card{
+background:#fff;
+border-radius:18px;
+padding:25px;
+box-shadow:0 10px 30px rgba(0,30,80,.07);
+border:1px solid #e2e8f1;
+}
+
+.info-card h3{
+color:#092b62;
+margin-bottom:13px;
+}
+
+.info-card p,
+.info-card li{
+color:#66758a;
+font-size:13px;
+line-height:1.9;
+}
+
+.info-card ul{
+padding-right:20px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+background:linear-gradient(135deg,#031b40,#0752a9);
+color:#fff;
+padding:65px 0;
+}
+
+.contact-box{
+text-align:center;
+}
+
+.contact h2{
+font-size:30px;
+margin-bottom:10px;
+}
+
+.contact p{
+color:#dce7f5;
+line-height:1.8;
+margin-bottom:18px;
+}
+
+.wa{
+display:inline-block;
+background:#25D366;
+color:#fff;
+padding:13px 25px;
+border-radius:11px;
+font-weight:900;
+transition:.25s;
+}
+
+.wa:hover{
+background:#1ebe5d;
+transform:translateY(-2px);
+}
+
+.track-link{
+display:inline-block;
+margin-top:12px;
+background:#fff;
+color:#092b62;
+padding:12px 22px;
+border-radius:11px;
+font-weight:900;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#031a3d;
+color:#fff;
+padding:30px 0 17px;
+}
+
+.footer-content{
+text-align:center;
+}
+
+footer h3{
+color:#e9b340;
+margin-bottom:7px;
+}
+
+footer p{
+color:#cbd7e9;
+font-size:12px;
+line-height:1.9;
+}
+
+.bottom{
+border-top:1px solid rgba(255,255,255,.12);
+margin-top:18px;
+padding-top:14px;
+color:#aebbd0;
+font-size:11px;
+}
+
+/* ================= FLOATING ================= */
+
+.floating{
+position:fixed;
+bottom:20px;
+left:20px;
+
+width:58px;
+height:58px;
+
+border-radius:50%;
+
+background:#25D366;
+color:#fff;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:27px;
+
+z-index:100;
+
+box-shadow:0 7px 25px rgba(0,0,0,.25);
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+display:none;
+
+position:fixed;
+inset:0;
+
+background:rgba(0,15,40,.72);
+
+z-index:300;
+
+padding:20px;
+
+align-items:center;
+justify-content:center;
+}
+
+.modal.open{
+display:flex;
+}
+
+.modal-card{
+background:#fff;
+
+width:min(600px,100%);
+max-height:90vh;
+
+overflow:auto;
+
+border-radius:20px;
+
+border:2px solid #e9b340;
+
+padding:25px;
+}
+
+.modal-card h2{
+text-align:center;
+color:#092b62;
+margin-bottom:17px;
+}
+
+.modal-route{
+text-align:center;
+
+background:#fff8df;
+
+border-radius:11px;
+
+padding:14px;
+
+color:#0967df;
+
+font-weight:900;
+
+font-size:20px;
+
+margin-bottom:14px;
+}
+
+.close{
+float:left;
+
+border:0;
+
+background:#eef3f9;
+
+border-radius:8px;
+
+padding:7px 11px;
+
+cursor:pointer;
+
+font-size:16px;
+}
+
+.success{
+color:#40546f;
+line-height:1.9;
+font-size:13px;
+text-align:center;
+}
+
+.order-number{
+font-size:24px;
+font-weight:900;
+color:#0967df;
+display:block;
+margin:10px 0;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+.nav-links{
+display:none;
+}
+
+.hero h1{
+font-size:43px;
+}
+
+.form-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.feature-grid,
+.services-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.packages{
+grid-template-columns:1fr;
+}
+
+.info-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:600px){
+
+header{
+min-height:600px;
+}
+
+.nav{
+padding:12px 4%;
+}
+
+.logo{
+font-size:20px;
+}
+
+.nav-contact{
+padding:7px 9px;
+font-size:10px;
+}
+
+.hero{
+padding-top:100px;
+}
+
+.badge{
+font-size:10px;
+padding:7px 12px;
+}
+
+.hero h1{
+font-size:29px;
+}
+
+.hero p{
+font-size:13px;
+line-height:1.65;
+}
+
+.hero-buttons{
+display:grid;
+grid-template-columns:1fr;
+}
+
+.btn{
+font-size:11px;
+padding:10px 15px;
+}
+
+.booking{
+margin-top:-35px;
+}
+
+.booking-card{
+padding:14px;
+border-radius:16px;
+}
+
+.booking-title{
+font-size:20px;
+margin-bottom:15px;
+}
+
+.form-grid{
+grid-template-columns:1fr 1fr;
+gap:8px;
+}
+
+.field label{
+font-size:10px;
+margin-bottom:4px;
+}
+
+.field input,
+.field select,
+.field textarea{
+font-size:10px;
+min-height:39px;
+padding:7px;
+}
+
+.field textarea{
+height:70px;
+}
+
+.submit{
+height:46px;
+font-size:13px;
+}
+
+.feature-grid,
+.services-grid{
+grid-template-columns:1fr 1fr;
+gap:8px;
+}
+
+.feature{
+padding:15px 8px;
+}
+
+.feature-icon{
+font-size:27px;
+}
+
+.feature h3{
+font-size:12px;
+}
+
+.feature p{
+font-size:9px;
+}
+
+.section{
+padding:48px 0;
+}
+
+.section-title h2{
+font-size:24px;
+}
+
+.section-title p{
+font-size:11px;
+}
+
+.package-img{
+height:135px;
+}
+
+.package-body{
+padding:14px;
+}
+
+.package-body h3{
+font-size:17px;
+}
+
+.package-body p,
+.package-list{
+font-size:10px;
+}
+
+.service{
+padding:17px 8px;
+}
+
+.service-icon{
+font-size:27px;
+}
+
+.service h3{
+font-size:12px;
+}
+
+.service p{
+font-size:9px;
+}
+
+.info-card{
+padding:17px;
+}
+
+.info-card h3{
+font-size:16px;
+}
+
+.info-card p,
+.info-card li{
+font-size:10px;
+}
+
+.contact{
+padding:45px 0;
+}
+
+.contact h2{
+font-size:23px;
+}
+
+.contact p{
+font-size:11px;
+}
+
+.floating{
+width:49px;
+height:49px;
+font-size:23px;
+bottom:16px;
+}
+
+.modal{
+padding:12px;
+}
+
+.modal-card{
+padding:18px;
+}
+
+.modal-card h2{
+font-size:19px;
+}
+
+.modal-route{
+font-size:16px;
+}
+
+.order-number{
+font-size:20px;
+}
+
+}
+
+@media(max-width:400px){
+
+.form-grid{
+grid-template-columns:1fr;
+}
+
+.full{
+grid-column:1;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= NAVIGATION ================= -->
+
+<header>
+
+<nav class="nav">
+
+<a href="index.html" class="logo">
+AFG <span>TRAVEL</span>
+</a>
+
+<div class="nav-links">
+
+<a href="index.html">الرئيسية</a>
+
+<a href="flights.html">✈️ الرحلات</a>
+
+<a href="hotel.html">🏨 الفنادق</a>
+
+<a href="umrah.html">🕋 العمرة</a>
+
+<a href="visa.html">🛂 التأشيرات</a>
+
+<a href="track.html">🔎 متابعة الطلب</a>
+
+<a href="index.html#contact">📞 تواصل معنا</a>
+
+</div>
+
+<a
+href="https://wa.me/249967214147"
+target="_blank"
+rel="noopener"
+class="nav-contact"
+>
+واتساب الوكالة
+</a>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<div class="hero">
+
+<div class="badge">
+🕋 رحلة إيمانية تبدأ بخدمة موثوقة
+</div>
+
+<h1>
+خدمات <span>العمرة</span><br>
+مع AFG TRAVEL
+</h1>
+
+<p>
+نساعدكم في تجهيز طلب العمرة والسكن والنقل والتأشيرة
+وتذاكر السفر وفق الخيارات المناسبة لكم.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#booking" class="btn gold">
+📝 اطلب العمرة الآن
+</a>
+
+<a href="index.html" class="btn white">
+🏠 العودة للرئيسية
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- ================= BOOKING ================= -->
+
+<section class="booking" id="booking">
+
+<div class="container">
+
+<div class="booking-card">
+
+<div class="booking-title">
+🕋 طلب <span>العمرة</span>
+</div>
+
+<form id="umrahForm" autocomplete="on">
+
+<div class="form-grid">
+
+<div class="field full">
+
+<label>👤 الاسم الكامل للمعتمر</label>
+
+<input
+id="fullName"
+type="text"
+placeholder="اكتب الاسم الكامل حسب الجواز"
+autocomplete="name"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>🌍 الجنسية</label>
+
+<input
+id="nationality"
+type="text"
+placeholder="مثال: سوداني"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>🛂 رقم الجواز</label>
+
+<input
+id="passport"
+type="text"
+placeholder="رقم الجواز"
+autocomplete="off"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>📱 رقم الهاتف</label>
+
+<input
+id="phone"
+type="tel"
+placeholder="رقم التواصل"
+autocomplete="tel"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>👥 عدد المعتمرين</label>
+
+<select id="people">
+
+<option>1 معتمر</option>
+<option>2 معتمرين</option>
+<option>3 معتمرين</option>
+<option>4 معتمرين</option>
+<option>5 معتمرين</option>
+<option>6 معتمرين</option>
+<option>7 معتمرين</option>
+<option>8 معتمرين</option>
+<option>9 معتمرين</option>
+<option>10 معتمرين</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>🎁 نوع الباقة</label>
+
+<select id="package">
+
+<option>اقتصادية</option>
+<option>مميزة</option>
+<option>VIP</option>
+<option>أرغب في الاستفسار عن الخيارات</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>📅 تاريخ السفر</label>
+
+<input
+id="travelDate"
+type="date"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>🌙 مدة الإقامة</label>
+
+<select id="duration">
+
+<option>7 أيام</option>
+<option>10 أيام</option>
+<option>14 يومًا</option>
+<option>15 يومًا</option>
+<option>21 يومًا</option>
+<option>أخرى</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>🏨 مستوى السكن</label>
+
+<select id="hotelLevel">
+
+<option>اقتصادي</option>
+<option>3 نجوم</option>
+<option>4 نجوم</option>
+<option>5 نجوم</option>
+<option>قريب من الحرم</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>🚐 النقل</label>
+
+<select id="transport">
+
+<option>بدون نقل</option>
+<option>نقل مشترك</option>
+<option>نقل خاص</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>✈️ تذاكر الطيران</label>
+
+<select id="flight">
+
+<option>لا أحتاج تذاكر</option>
+<option>أحتاج تذاكر ذهاب فقط</option>
+<option>أحتاج تذاكر ذهاب وعودة</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>🛂 خدمة التأشيرة</label>
+
+<select id="visa">
+
+<option>أحتاج خدمة التأشيرة</option>
+<option>لدي تأشيرة</option>
+<option>أرغب في الاستفسار</option>
+
+</select>
+
+</div>
+
+
+<div class="field full">
+
+<label>📝 ملاحظات أو طلبات خاصة</label>
+
+<textarea
+id="notes"
+placeholder="اكتب أي ملاحظات أو متطلبات خاصة..."
+></textarea>
+
+</div>
+
+
+<div class="field full">
+
+<button
+class="submit"
+type="submit"
+id="submitUmrah"
+>
+📲 إرسال طلب العمرة إلى واتساب الوكالة
+</button>
+
+</div>
+
+</div>
+
+<div class="form-note">
+🔒 يتم إنشاء رقم طلب خاص بك وحفظ بيانات الطلب على هذا الجهاز لاستخدامها في المتابعة.
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+<div class="container">
+
+<div class="feature-grid">
+
+<div class="feature">
+<div class="feature-icon">⚡</div>
+<h3>إجراءات سهلة</h3>
+<p>نموذج واضح وسريع لإرسال طلب العمرة.</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">🏨</div>
+<h3>خيارات سكن</h3>
+<p>اختر مستوى السكن المناسب لاحتياجاتك.</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">🚐</div>
+<h3>خدمات النقل</h3>
+<p>خيارات نقل مشتركة أو خاصة حسب الطلب.</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">📱</div>
+<h3>تواصل مباشر</h3>
+<p>يصل طلبك مباشرة إلى واتساب الوكالة.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PACKAGES ================= -->
+
+<section class="section" id="packages">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>خياراتنا</small>
+
+<h2>باقات العمرة</h2>
+
+<p>
+اختر الفئة التي تناسب احتياجاتك، ثم أرسل طلبك للحصول على التفاصيل.
+</p>
+
+</div>
+
+
+<div class="packages">
+
+
+<div class="package">
+
+<div class="package-img economy"></div>
+
+<div class="package-body">
+
+<h3>الباقة الاقتصادية</h3>
+
+<p>
+خيار عملي لمن يبحث عن تكلفة مناسبة مع الخدمات الأساسية.
+</p>
+
+<ul class="package-list">
+
+<li>إقامة حسب المتاح</li>
+<li>خيارات نقل</li>
+<li>خدمة متابعة الطلب</li>
+<li>إمكانية طلب التذاكر والتأشيرة</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="package">
+
+<div class="package-img premium"></div>
+
+<div class="package-body">
+
+<h3>الباقة المميزة</h3>
+
+<p>
+توازن بين الراحة والخدمات المناسبة للمعتمر وعائلته.
+</p>
+
+<ul class="package-list">
+
+<li>خيارات فنادق أفضل</li>
+<li>نقل مناسب</li>
+<li>متابعة وتجهيز الطلب</li>
+<li>خيارات إضافية حسب الطلب</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="package">
+
+<div class="package-img vip"></div>
+
+<div class="package-body">
+
+<h3>باقة VIP</h3>
+
+<p>
+لمن يبحث عن مستوى أعلى من الراحة والخدمة الشخصية.
+</p>
+
+<ul class="package-list">
+
+<li>فنادق مميزة وقريبة حسب التوفر</li>
+<li>نقل خاص حسب الطلب</li>
+<li>خدمة متابعة شخصية</li>
+<li>تنسيق متطلبات الرحلة</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SERVICES ================= -->
+
+<section class="section alt">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>خدمات متكاملة</small>
+
+<h2>ماذا نوفر لك؟</h2>
+
+<p>
+يمكنك اختيار ما تحتاجه ضمن طلب العمرة.
+</p>
+
+</div>
+
+
+<div class="services-grid">
+
+<div class="service">
+<div class="service-icon">🛂</div>
+<h3>التأشيرة</h3>
+<p>مساعدة في إجراءات ومتطلبات التأشيرة حسب الحالة.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">🏨</div>
+<h3>السكن</h3>
+<p>خيارات إقامة في مكة والمدينة حسب الميزانية والتوفر.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">🚐</div>
+<h3>النقل</h3>
+<p>تنسيق النقل بين المدن والمطار حسب الطلب.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">✈️</div>
+<h3>تذاكر الطيران</h3>
+<p>إمكانية طلب تذاكر الطيران ضمن تجهيز الرحلة.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= INFO ================= -->
+
+<section class="section">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>معلومات مهمة</small>
+
+<h2>قبل إرسال طلب العمرة</h2>
+
+</div>
+
+
+<div class="info-grid">
+
+
+<div class="info-card">
+
+<h3>📋 البيانات المطلوبة</h3>
+
+<ul>
+
+<li>الاسم الكامل كما هو في الجواز.</li>
+<li>الجنسية ورقم الجواز.</li>
+<li>رقم هاتف صحيح للتواصل.</li>
+<li>تاريخ السفر المتوقع ومدة الإقامة.</li>
+<li>عدد المعتمرين والخدمات المطلوبة.</li>
+
+</ul>
+
+</div>
+
+
+<div class="info-card">
+
+<h3>💡 كيف يعمل الطلب؟</h3>
+
+<p>
+
+بعد إرسال النموذج، يتم إنشاء رقم طلب فريد.
+احتفظ بالرقم واستخدمه في صفحة
+<strong>متابعة الطلب</strong>
+لمتابعة حالة طلبك.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<div class="contact-box">
+
+<h2>
+جاهز لرحلة العمرة؟ 🕋
+</h2>
+
+<p>
+أرسل طلبك الآن وسيتواصل معك فريق AFG TRAVEL لمراجعة التفاصيل.
+</p>
+
+<a
+class="wa"
+href="https://wa.me/249967214147"
+target="_blank"
+rel="noopener"
+>
+💬 تواصل عبر واتساب
+</a>
+
+<br>
+
+<a
+class="track-link"
+href="track.html"
+>
+🔎 متابعة رقم الطلب
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-content">
+
+<h3>AFG TRAVEL</h3>
+
+<p>
+للسفر والسياحة ✈️ — خدمات العمرة والسفر
+</p>
+
+<p>
+واتساب: +249 967 214 147
+</p>
+
+<p>
+📧 afgtravel25@gmail.com
+</p>
+
+<div class="bottom">
+© 2026 AFG TRAVEL — جميع الحقوق محفوظة
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- ================= FLOATING WHATSAPP ================= -->
+
+<a
+class="floating"
+href="https://wa.me/249967214147"
+target="_blank"
+rel="noopener"
+aria-label="واتساب AFG TRAVEL"
+>
+💬
+</a>
+
+
+<!-- ================= SUCCESS MODAL ================= -->
+
+<div
+class="modal"
+id="successModal"
+onclick="if(event.target===this)closeModal()"
+>
+
+<div class="modal-card">
+
+<button
+class="close"
+type="button"
+onclick="closeModal()"
+aria-label="إغلاق"
+>
+✕
+</button>
+
+<h2>
+تم إنشاء طلب العمرة بنجاح
+</h2>
+
+<div
+class="modal-route"
+id="modalRoute"
+>
+AFG TRAVEL
+</div>
+
+<div
+class="success"
+id="modalDetails"
+>
+</div>
+
+<br>
+
+<a
+class="wa"
+id="modalWA"
+href="#"
+target="_blank"
+rel="noopener"
+>
+💬 إرسال الطلب إلى واتساب
+</a>
+
+<br>
+
+<a
+class="track-link"
+href="track.html"
+>
+🔎 متابعة الطلب
+</a>
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =====================================================
+   AFG TRAVEL - UMRAH SYSTEM
+===================================================== */
+
+const WA_NUMBER = "249967214147";
+
+const form = document.getElementById("umrahForm");
+const successModal = document.getElementById("successModal");
+
+
+/* =========================
+   قراءة الحقول
+========================= */
+
+function value(id){
+
+const element = document.getElementById(id);
+
+if(!element){
+return "";
+}
+
+return element.value.trim();
+
+}
+
+
+/* =========================
+   إنشاء رقم طلب
+========================= */
+
+function createOrderNumber(){
+
+const now = new Date();
+
+const year =
+String(now.getFullYear()).slice(-2);
+
+const month =
+String(now.getMonth()+1).padStart(2,"0");
+
+const day =
+String(now.getDate()).padStart(2,"0");
+
+const hour =
+String(now.getHours()).padStart(2,"0");
+
+const minute =
+String(now.getMinutes()).padStart(2,"0");
+
+const second =
+String(now.getSeconds()).padStart(2,"0");
+
+const random =
+Math.floor(100 + Math.random()*900);
+
+return (
+"AFG-UM-"+
+year+
+month+
+day+
+"-"+
+hour+
+minute+
+second+
+"-"+
+random
+);
+
+}
+
+
+/* =========================
+   رسالة واتساب
+========================= */
+
+function buildMessage(order){
+
+return `🕋 *طلب عمرة جديد — AFG TRAVEL*
+
+━━━━━━━━━━━━━━
+
+🔖 *رقم الطلب:*
+${order}
+
+👤 *الاسم:*
+${value("fullName")}
+
+🌍 *الجنسية:*
+${value("nationality")}
+
+🛂 *رقم الجواز:*
+${value("passport")}
+
+📱 *هاتف العميل:*
+${value("phone")}
+
+👥 *عدد المعتمرين:*
+${value("people")}
+
+🎁 *الباقة:*
+${value("package")}
+
+📅 *تاريخ السفر:*
+${value("travelDate")}
+
+🌙 *مدة الإقامة:*
+${value("duration")}
+
+🏨 *مستوى السكن:*
+${value("hotelLevel")}
+
+🚐 *النقل:*
+${value("transport")}
+
+✈️ *تذاكر الطيران:*
+${value("flight")}
+
+🛂 *التأشيرة:*
+${value("visa")}
+
+📝 *الملاحظات:*
+${value("notes") || "لا توجد ملاحظات"}
+
+━━━━━━━━━━━━━━
+
+🔎 *رقم الطلب للمتابعة:*
+${order}
+
+يرجى مراجعة الطلب والتواصل مع العميل لتأكيد التفاصيل والتكلفة.`;
+
+}
+
+
+/* =========================
+   إرسال الطلب
+========================= */
+
+form.addEventListener("submit",function(e){
+
+e.preventDefault();
+
+
+/* التحقق من التاريخ */
+
+const travelDate = value("travelDate");
+
+if(!travelDate){
+
+alert("يرجى تحديد تاريخ السفر 📅");
+
+return;
+
+}
+
+
+/* إنشاء رقم الطلب */
+
+const order = createOrderNumber();
+
+
+/* =========================
+   بيانات الطلب
+========================= */
+
+const orderData = {
+
+order: order,
+
+type: "عمرة",
+
+status: "قيد المراجعة",
+
+name: value("fullName"),
+
+nationality: value("nationality"),
+
+passport: value("passport"),
+
+phone: value("phone"),
+
+people: value("people"),
+
+package: value("package"),
+
+travelDate: value("travelDate"),
+
+duration: value("duration"),
+
+hotelLevel: value("hotelLevel"),
+
+transport: value("transport"),
+
+flight: value("flight"),
+
+visa: value("visa"),
+
+notes: value("notes"),
+
+createdAt: new Date().toISOString(),
+
+updatedAt: new Date().toISOString()
+
+};
+
+
+/* =========================
+   حفظ رقم الطلب
+========================= */
+
+localStorage.setItem(
+"AFG_LAST_ORDER",
+order
+);
+
+localStorage.setItem(
+"AFG_LAST_UMRAH_ORDER",
+order
+);
+
+
+/* =========================
+   حفظ بيانات الطلب
+========================= */
+
+localStorage.setItem(
+"AFG_ORDER_"+order,
+JSON.stringify(orderData)
+);
+
+
+/* =========================
+   إضافة الطلب إلى قائمة عامة
+========================= */
+
+let orders = [];
+
+try{
+
+orders =
+JSON.parse(
+localStorage.getItem("AFG_ORDERS")
+) || [];
+
+}catch(error){
+
+orders = [];
+
+}
+
+
+/* منع التكرار */
+
+orders =
+orders.filter(function(item){
+
+return item && item.order !== order;
+
+});
+
+
+orders.push(orderData);
+
+
+/* الاحتفاظ بآخر 100 طلب على الجهاز */
+
+if(orders.length > 100){
+
+orders = orders.slice(-100);
+
+}
+
+
+localStorage.setItem(
+"AFG_ORDERS",
+JSON.stringify(orders)
+);
+
+
+/* =========================
+   إنشاء رسالة واتساب
+========================= */
+
+const message =
+buildMessage(order);
+
+
+/* رابط واتساب */
+
+const whatsappURL =
+"https://wa.me/"+
+WA_NUMBER+
+"?text="+
+encodeURIComponent(message);
+
+
+/* =========================
+   عرض النتيجة
+========================= */
+
+document.getElementById(
+"modalRoute"
+).textContent =
+"🔖 "+order;
+
+
+document.getElementById(
+"modalDetails"
+).innerHTML =
+
+"تم استلام بيانات طلبك بنجاح."
++
+"<br>"
++
+"احتفظ برقم الطلب التالي:"
++
+"<span class='order-number'>"
++
+order
++
+"</span>"
++
+"يمكنك استخدامه لاحقًا في صفحة متابعة الطلب.";
+
+
+document.getElementById(
+"modalWA"
+).href =
+whatsappURL;
+
+
+successModal.classList.add("open");
+
+
+/* =========================
+   فتح واتساب
+========================= */
+
+setTimeout(function(){
+
+window.open(
+whatsappURL,
+"_blank"
+);
+
+},500);
+
+});
+
+
+/* =========================
+   إغلاق النافذة
+========================= */
+
+function closeModal(){
+
+successModal.classList.remove("open");
+
+}
+
+
+/* =========================
+   زر ESC
+========================= */
+
+document.addEventListener(
+"keydown",
+function(e){
+
+if(e.key === "Escape"){
+
+closeModal();
+
+}
+
+});
+
+
+/* =========================
+   منع تاريخ سفر قديم
+========================= */
+
+(function(){
+
+const travelDate =
+document.getElementById("travelDate");
+
+const now =
+new Date();
+
+const year =
+now.getFullYear();
+
+const month =
+String(now.getMonth()+1)
+.padStart(2,"0");
+
+const day =
+String(now.getDate())
+.padStart(2,"0");
+
+travelDate.min =
+year+"-"+month+"-"+day;
+
+})();
+
+</script>
+
+</body>
+</html>

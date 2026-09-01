@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>AFG TRAVEL | حجز الفنادق</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+body{
+font-family:Arial,Tahoma,sans-serif;
+background:#f7f9fc;
+color:#172b4d;
+overflow-x:hidden;
+}
+
+a{text-decoration:none}
+
+/* NAVBAR */
+.nav{
+position:absolute;
+top:0;
+right:0;
+left:0;
+z-index:50;
+padding:20px 5%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:rgba(3,24,58,.48);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.logo{
+font-size:29px;
+font-weight:900;
+letter-spacing:1px;
+color:#fff;
+}
+
+.logo span{color:#e9b340}
+
+.nav-links{
+display:flex;
+gap:22px;
+align-items:center;
+}
+
+.nav-links a{
+color:#fff;
+font-weight:bold;
+font-size:14px;
+transition:.2s;
+}
+
+.nav-links a:hover{color:#e9b340}
+
+.nav-contact{
+color:#fff;
+border:1px solid #e9b340;
+padding:10px 17px;
+border-radius:9px;
+font-weight:bold;
+transition:.2s;
+}
+
+.nav-contact:hover{
+background:#e9b340;
+color:#062453;
+}
+
+/* HERO */
+.hero{
+min-height:540px;
+position:relative;
+color:#fff;
+overflow:hidden;
+background:
+linear-gradient(
+90deg,
+rgba(2,23,57,.94),
+rgba(5,60,130,.55)
+),
+url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2000&q=90")
+center/cover;
+}
+
+.hero-content{
+padding-top:145px;
+width:92%;
+max-width:1000px;
+margin:auto;
+text-align:center;
+}
+
+.badge{
+display:inline-block;
+padding:9px 18px;
+border-radius:30px;
+background:rgba(255,255,255,.13);
+border:1px solid rgba(255,255,255,.25);
+margin-bottom:18px;
+font-size:14px;
+}
+
+.hero h1{
+font-size:54px;
+line-height:1.2;
+font-weight:900;
+text-shadow:0 5px 20px rgba(0,0,0,.3);
+}
+
+.hero h1 span{color:#e9b340}
+
+.hero p{
+max-width:700px;
+margin:18px auto;
+font-size:18px;
+line-height:1.9;
+color:#e5edf8;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:12px;
+margin-top:25px;
+flex-wrap:wrap;
+}
+
+.hero-btn{
+padding:13px 26px;
+border-radius:10px;
+font-weight:bold;
+font-size:15px;
+transition:.3s;
+}
+
+.gold-btn{
+background:#e9b340;
+color:#062453;
+}
+
+.white-btn{
+color:#fff;
+border:1px solid rgba(255,255,255,.45);
+background:rgba(255,255,255,.1);
+}
+
+.hero-btn:hover{
+transform:translateY(-3px);
+}
+
+/* CONTAINER */
+.container{
+width:92%;
+max-width:1100px;
+margin:auto;
+}
+
+/* HOTEL SEARCH */
+.hotel-wrapper{
+margin-top:-80px;
+position:relative;
+z-index:20;
+padding-bottom:55px;
+}
+
+.hotel-card{
+background:#fff;
+border:2px solid #e9b340;
+border-radius:24px;
+box-shadow:0 20px 55px rgba(0,32,80,.22);
+overflow:hidden;
+}
+
+.card-header{
+background:linear-gradient(135deg,#062453,#0b5ed7);
+color:#fff;
+padding:23px;
+text-align:center;
+}
+
+.card-header h2{
+font-size:25px;
+margin-bottom:7px;
+}
+
+.card-header p{
+font-size:13px;
+color:#dce8f7;
+}
+
+.card-body{
+padding:25px;
+}
+
+/* HOTEL TYPES */
+.hotel-types{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:12px;
+margin-bottom:25px;
+}
+
+.hotel-type{
+border:2px solid #e3e8ef;
+background:#f8fafc;
+border-radius:14px;
+padding:18px 10px;
+text-align:center;
+cursor:pointer;
+font-weight:bold;
+transition:.25s;
+}
+
+.hotel-type:hover{
+border-color:#e9b340;
+transform:translateY(-2px);
+}
+
+.hotel-type.active{
+background:linear-gradient(135deg,#062453,#0b5ed7);
+color:#fff;
+border-color:#e9b340;
+box-shadow:0 8px 20px rgba(6,36,83,.2);
+}
+
+.hotel-icon{
+font-size:32px;
+margin-bottom:7px;
+}
+
+/* FIELDS */
+.fields{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.field label{
+display:block;
+color:#20365e;
+font-size:13px;
+font-weight:bold;
+margin-bottom:7px;
+}
+
+.field input,
+.field select,
+.field textarea{
+width:100%;
+border:2px solid #e2e7ef;
+border-radius:10px;
+padding:13px;
+background:#f9fbff;
+outline:none;
+font-size:14px;
+font-family:inherit;
+color:#243b60;
+transition:.2s;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+border-color:#0967df;
+box-shadow:0 0 0 3px rgba(9,103,223,.08);
+}
+
+.full{
+grid-column:1/-1;
+}
+
+/* NIGHTS */
+.nights-box{
+display:none;
+grid-column:1/-1;
+background:linear-gradient(135deg,#eef5ff,#fffaf0);
+border:1px solid #e9b340;
+border-radius:14px;
+padding:17px;
+text-align:center;
+}
+
+.nights-box small{
+display:block;
+color:#68768c;
+margin-bottom:5px;
+}
+
+.nights-number{
+font-size:34px;
+font-weight:900;
+color:#0967df;
+}
+
+.nights-text{
+font-weight:bold;
+color:#062453;
+}
+
+/* INFO */
+.info-box{
+grid-column:1/-1;
+padding:15px;
+background:#f4f8ff;
+border-right:4px solid #0967df;
+border-radius:10px;
+line-height:1.9;
+font-size:13px;
+color:#40546f;
+}
+
+/* BUTTON */
+.submit-btn{
+grid-column:1/-1;
+height:55px;
+border:0;
+border-radius:11px;
+background:linear-gradient(135deg,#e9b340,#f4c64d);
+color:#062453;
+font-size:17px;
+font-weight:900;
+cursor:pointer;
+box-shadow:0 7px 18px rgba(233,179,64,.35);
+transition:.25s;
+}
+
+.submit-btn:hover{
+transform:translateY(-2px);
+}
+
+/* RESULT */
+.result{
+display:none;
+margin-top:20px;
+background:#f7faff;
+border:2px solid #e2e9f3;
+border-radius:15px;
+padding:20px;
+}
+
+.result h3{
+color:#062453;
+margin-bottom:13px;
+}
+
+.result-number{
+background:#fff8df;
+border:1px solid #efd27a;
+padding:12px;
+border-radius:9px;
+margin-bottom:13px;
+font-weight:bold;
+color:#062453;
+text-align:center;
+font-size:16px;
+}
+
+.order-copy{
+display:block;
+width:100%;
+border:1px solid #d9e1ec;
+background:#fff;
+color:#062453;
+padding:10px;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+margin-bottom:15px;
+}
+
+.order-copy:hover{
+background:#f2f6fc;
+}
+
+.result-details{
+line-height:1.9;
+background:#fff;
+padding:15px;
+border-radius:10px;
+border:1px solid #e5eaf1;
+}
+
+.whatsapp-btn{
+display:block;
+text-align:center;
+background:#25D366;
+color:#fff;
+padding:15px;
+border-radius:10px;
+font-weight:bold;
+margin-top:13px;
+}
+
+.whatsapp-btn:hover{
+background:#1ebe5d;
+}
+
+.new-order-btn{
+display:block;
+width:100%;
+text-align:center;
+background:#062453;
+color:#fff;
+padding:13px;
+border-radius:10px;
+font-weight:bold;
+margin-top:10px;
+border:0;
+cursor:pointer;
+}
+
+/* SERVICES */
+.services{
+padding:70px 0;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:35px;
+}
+
+.section-title small{
+color:#0967df;
+font-weight:bold;
+}
+
+.section-title h2{
+color:#092b62;
+font-size:34px;
+margin:9px 0;
+}
+
+.section-title p{
+color:#6c7789;
+}
+
+.features{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px;
+}
+
+.feature{
+background:#fff;
+border-radius:18px;
+padding:25px 15px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,30,80,.08);
+transition:.3s;
+}
+
+.feature:hover{
+transform:translateY(-6px);
+}
+
+.feature-icon{
+font-size:38px;
+margin-bottom:12px;
+}
+
+.feature h3{
+color:#092b62;
+margin-bottom:8px;
+font-size:17px;
+}
+
+.feature p{
+font-size:13px;
+line-height:1.7;
+color:#707b8b;
+}
+
+/* FOOTER */
+footer{
+background:#031a3d;
+color:#fff;
+padding:42px 0 20px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:1.3fr 1fr 1fr;
+gap:30px;
+}
+
+footer h3{
+color:#e9b340;
+margin-bottom:13px;
+}
+
+footer p,
+footer a{
+color:#cbd7e9;
+line-height:2;
+font-size:13px;
+}
+
+footer a:hover{
+color:#e9b340;
+}
+
+.footer-bottom{
+text-align:center;
+border-top:1px solid rgba(255,255,255,.13);
+margin-top:28px;
+padding-top:18px;
+color:#aebbd0;
+font-size:12px;
+}
+
+/* FLOATING */
+.whatsapp{
+position:fixed;
+bottom:20px;
+left:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:#25D366;
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:29px;
+z-index:200;
+box-shadow:0 7px 25px rgba(0,0,0,.25);
+}
+
+.afg-floating{
+position:fixed;
+bottom:90px;
+left:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:linear-gradient(135deg,#06204e,#0967df);
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:900;
+border:3px solid #fff;
+z-index:200;
+box-shadow:0 7px 25px rgba(0,0,0,.25);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+.nav-links{
+display:none;
+}
+
+.hero h1{
+font-size:43px;
+}
+
+.hotel-types{
+grid-template-columns:1fr 1fr;
+}
+
+.features{
+grid-template-columns:1fr 1fr;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:600px){
+
+.nav{
+padding:13px 4%;
+}
+
+.logo{
+font-size:20px;
+}
+
+.nav-contact{
+padding:7px 10px;
+font-size:11px;
+}
+
+.hero{
+min-height:500px;
+}
+
+.hero-content{
+padding-top:105px;
+}
+
+.badge{
+font-size:11px;
+padding:7px 13px;
+}
+
+.hero h1{
+font-size:30px;
+}
+
+.hero p{
+font-size:13px;
+line-height:1.7;
+}
+
+.hero-buttons{
+display:grid;
+grid-template-columns:1fr;
+}
+
+.hero-btn{
+width:100%;
+font-size:12px;
+}
+
+.hotel-wrapper{
+margin-top:-50px;
+}
+
+.card-body{
+padding:15px;
+}
+
+.card-header{
+padding:18px 12px;
+}
+
+.card-header h2{
+font-size:20px;
+}
+
+.hotel-types{
+gap:7px;
+}
+
+.hotel-type{
+padding:13px 5px;
+font-size:12px;
+}
+
+.hotel-icon{
+font-size:26px;
+}
+
+.fields{
+grid-template-columns:1fr 1fr;
+gap:9px;
+}
+
+.field label{
+font-size:10px;
+}
+
+.field input,
+.field select{
+height:42px;
+font-size:10px;
+padding:7px;
+}
+
+.full{
+grid-column:1/-1;
+}
+
+.submit-btn{
+height:48px;
+font-size:13px;
+}
+
+.nights-number{
+font-size:28px;
+}
+
+.features{
+grid-template-columns:1fr 1fr;
+gap:8px;
+}
+
+.feature{
+padding:17px 8px;
+}
+
+.feature-icon{
+font-size:28px;
+}
+
+.feature h3{
+font-size:12px;
+}
+
+.feature p{
+font-size:9px;
+}
+
+.section-title h2{
+font-size:24px;
+}
+
+.whatsapp,
+.afg-floating{
+width:49px;
+height:49px;
+}
+
+.afg-floating{
+bottom:76px;
+}
+
+.whatsapp{
+bottom:16px;
+}
+
+}
+
+@media(max-width:400px){
+
+.fields{
+grid-template-columns:1fr;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav class="nav">
+
+<a href="index.html" class="logo">
+AFG <span>TRAVEL</span>
+</a>
+
+<div class="nav-links">
+
+<a href="index.html">الرئيسية</a>
+
+<!-- تم التعديل: الرحلات داخل الصفحة الرئيسية -->
+<a href="index.html#flightSearch">✈️ الرحلات</a>
+
+<a href="hotel.html">🏨 الفنادق</a>
+
+<a href="umrah.html">🕋 العمرة</a>
+
+<a href="visa.html">🛂 التأشيرات</a>
+
+<a href="track.html">🔎 متابعة الطلب</a>
+
+<a href="index.html#contact">تواصل معنا</a>
+
+</div>
+
+<a
+href="https://wa.me/249967214147"
+target="_blank"
+rel="noopener"
+class="nav-contact"
+>
+واتساب
+</a>
+
+</nav>
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+<div class="hero-content">
+
+<div class="badge">
+🏨 AFG TRAVEL — حجز الفنادق
+</div>
+
+<h1>
+إقامتك تبدأ من هنا مع<br>
+<span>AFG TRAVEL</span>
+</h1>
+
+<p>
+أرسل تفاصيل الفندق الذي تبحث عنه،
+وسنساعدك في الوصول إلى أفضل الخيارات المتاحة
+حسب الوجهة والتاريخ والميزانية.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#hotelSearch" class="hero-btn gold-btn">
+🔎 ابدأ طلب الفندق
+</a>
+
+<a href="index.html" class="hero-btn white-btn">
+🏠 العودة للرئيسية
+</a>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- HOTEL FORM -->
+
+<section class="hotel-wrapper" id="hotelSearch">
+
+<div class="container">
+
+<div class="hotel-card">
+
+<div class="card-header">
+
+<h2>
+🏨 طلب حجز فندق
+</h2>
+
+<p>
+أدخل تفاصيل إقامتك وسنراجع الخيارات المتاحة لك
+</p>
+
+</div>
+
+<div class="card-body">
+
+<div class="hotel-types">
+
+<div class="hotel-type" data-type="فندق">
+<div class="hotel-icon">🏨</div>
+فندق
+</div>
+
+<div class="hotel-type" data-type="شقة فندقية">
+<div class="hotel-icon">🏢</div>
+شقة فندقية
+</div>
+
+<div class="hotel-type" data-type="منتجع">
+<div class="hotel-icon">🏝️</div>
+منتجع
+</div>
+
+<div class="hotel-type" data-type="أي خيار مناسب">
+<div class="hotel-icon">🔎</div>
+أي خيار مناسب
+</div>
+
+</div>
+
+<input type="hidden" id="hotelType">
+
+<div class="fields">
+
+<div class="field full">
+
+<label>🌍 المدينة / الوجهة</label>
+
+<input
+id="destination"
+type="text"
+autocomplete="off"
+placeholder="مثال: مكة، المدينة، الرياض، دبي، القاهرة..."
+>
+
+</div>
+
+
+<div class="field">
+
+<label>📅 تاريخ الدخول</label>
+
+<input id="checkIn" type="date">
+
+</div>
+
+
+<div class="field">
+
+<label>📅 تاريخ الخروج</label>
+
+<input id="checkOut" type="date">
+
+</div>
+
+
+<div class="nights-box" id="nightsBox">
+
+<small>مدة الإقامة</small>
+
+<div class="nights-number" id="nights">0</div>
+
+<div class="nights-text">
+🌙 ليلة
+</div>
+
+</div>
+
+
+<div class="field">
+
+<label>🛏️ عدد الغرف</label>
+
+<input
+id="rooms"
+type="number"
+min="1"
+max="20"
+value="1"
+>
+
+</div>
+
+
+<div class="field">
+
+<label>👥 عدد النزلاء</label>
+
+<input
+id="guests"
+type="number"
+min="1"
+max="50"
+value="1"
+>
+
+</div>
+
+
+<div class="field">
+
+<label>⭐ تصنيف الفندق</label>
+
+<select id="stars">
+
+<option value="">اختر التصنيف</option>
+<option>⭐⭐⭐ 3 نجوم</option>
+<option>⭐⭐⭐⭐ 4 نجوم</option>
+<option>⭐⭐⭐⭐⭐ 5 نجوم</option>
+<option>غير محدد</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>🛌 نوع الغرفة</label>
+
+<select id="roomType">
+
+<option value="">اختر نوع الغرفة</option>
+<option>غرفة مفردة</option>
+<option>غرفة مزدوجة</option>
+<option>غرفة ثلاثية</option>
+<option>غرفة عائلية</option>
+<option>غير محدد</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>👤 الاسم الكامل</label>
+
+<input
+id="customerName"
+type="text"
+autocomplete="name"
+placeholder="اكتب الاسم الكامل"
+>
+
+</div>
+
+
+<div class="field">
+
+<label>📱 رقم الهاتف</label>
+
+<input
+id="customerPhone"
+type="tel"
+autocomplete="tel"
+placeholder="مثال: 249967214147"
+>
+
+</div>
+
+
+<div class="field full">
+
+<label>📝 ملاحظات إضافية</label>
+
+<textarea
+id="notes"
+rows="4"
+placeholder="مثال: قريب من الحرم، إفطار، إطلالة، سرير إضافي..."
+></textarea>
+
+</div>
+
+
+<div class="info-box">
+
+ℹ️ <strong>ملاحظة:</strong>
+الأسعار والتوافر يتم تأكيدهما بعد مراجعة الطلب.
+الموقع لا يعرض أسعارًا ثابتة حاليًا.
+
+</div>
+
+
+<button
+type="button"
+class="submit-btn"
+id="submitHotel"
+>
+📲 تجهيز طلب الفندق
+</button>
+
+</div>
+
+
+<!-- RESULT -->
+
+<div class="result" id="result">
+
+<h3>
+✅ تم تجهيز طلب الفندق بنجاح
+</h3>
+
+<div class="result-number" id="resultNumber"></div>
+
+<button
+type="button"
+class="order-copy"
+id="copyOrder"
+>
+📋 نسخ رقم الطلب
+</button>
+
+<div
+class="result-details"
+id="resultDetails"
+></div>
+
+<a
+href="#"
+id="whatsappLink"
+target="_blank"
+rel="noopener"
+class="whatsapp-btn"
+>
+💬 إرسال الطلب إلى واتساب AFG TRAVEL
+</a>
+
+<button
+type="button"
+class="new-order-btn"
+id="newOrder"
+>
+🔄 إنشاء طلب فندق جديد
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>AFG TRAVEL</small>
+
+<h2>
+لماذا تحجز الفندق معنا؟
+</h2>
+
+<p>
+نساعدك في تجهيز طلب الفندق بسهولة وسرعة.
+</p>
+
+</div>
+
+
+<div class="features">
+
+<div class="feature">
+<div class="feature-icon">🌍</div>
+<h3>وجهات متعددة</h3>
+<p>
+مكة، المدينة، الرياض، دبي، القاهرة والعديد من الوجهات.
+</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">🏨</div>
+<h3>خيارات متنوعة</h3>
+<p>
+فنادق وشقق فندقية ومنتجعات حسب احتياجاتك.
+</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">⚡</div>
+<h3>خدمة سريعة</h3>
+<p>
+نراجع طلبك ونتواصل معك بأسرع وقت ممكن.
+</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">💬</div>
+<h3>تواصل مباشر</h3>
+<p>
+أرسل طلبك مباشرة إلى واتساب الوكالة.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>AFG TRAVEL</h3>
+
+<p>للسفر والسياحة ✈️</p>
+
+<p>
+سفرك معنا... تجربة تليق بك.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>روابط سريعة</h3>
+
+<p><a href="index.html">الرئيسية</a></p>
+
+<p><a href="index.html#flightSearch">الرحلات</a></p>
+
+<p><a href="hotel.html">الفنادق</a></p>
+
+<p><a href="umrah.html">العمرة</a></p>
+
+<p><a href="visa.html">التأشيرات</a></p>
+
+<p><a href="track.html">متابعة الطلب</a></p>
+
+</div>
+
+
+<div>
+
+<h3>بيانات الوكالة</h3>
+
+<p>📧 afgtravel25@gmail.com</p>
+
+<p>📧 info@afgtravel.com</p>
+
+<p>📱 +249 967 214 147</p>
+
+<p>📍 الخرطوم - العمارات - شارع 21</p>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+© 2026 AFG TRAVEL — جميع الحقوق محفوظة
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- FLOATING BUTTONS -->
+
+<a
+href="index.html"
+class="afg-floating"
+aria-label="العودة إلى الرئيسية"
+>
+AFG
+</a>
+
+
+<a
+href="https://wa.me/249967214147"
+target="_blank"
+rel="noopener"
+class="whatsapp"
+aria-label="واتساب AFG TRAVEL"
+>
+💬
+</a>
+
+
+<script>
+
+/* =========================
+   العناصر
+========================= */
+
+const hotelButtons =
+document.querySelectorAll(".hotel-type");
+
+const hotelType =
+document.getElementById("hotelType");
+
+const checkIn =
+document.getElementById("checkIn");
+
+const checkOut =
+document.getElementById("checkOut");
+
+const nightsBox =
+document.getElementById("nightsBox");
+
+const nights =
+document.getElementById("nights");
+
+const result =
+document.getElementById("result");
+
+const submitHotel =
+document.getElementById("submitHotel");
+
+
+/* =========================
+   اختيار نوع الفندق
+========================= */
+
+hotelButtons.forEach(button => {
+
+button.addEventListener("click",function(){
+
+hotelButtons.forEach(b =>
+b.classList.remove("active")
+);
+
+this.classList.add("active");
+
+hotelType.value =
+this.dataset.type;
+
+});
+
+});
+
+
+/* =========================
+   حساب الليالي
+========================= */
+
+function calculateNights(){
+
+if(!checkIn.value || !checkOut.value){
+
+nightsBox.style.display="none";
+
+return 0;
+
+}
+
+const start =
+new Date(checkIn.value+"T00:00:00");
+
+const end =
+new Date(checkOut.value+"T00:00:00");
+
+const difference =
+end-start;
+
+const numberOfNights =
+Math.round(
+difference/(1000*60*60*24)
+);
+
+if(numberOfNights<=0){
+
+nightsBox.style.display="none";
+
+return 0;
+
+}
+
+nights.textContent =
+numberOfNights;
+
+nightsBox.style.display="block";
+
+return numberOfNights;
+
+}
+
+
+checkIn.addEventListener("change",function(){
+
+if(checkIn.value){
+
+checkOut.min =
+checkIn.value;
+
+if(
+checkOut.value &&
+checkOut.value <= checkIn.value
+){
+
+checkOut.value="";
+
+}
+
+}
+
+calculateNights();
+
+});
+
+
+checkOut.addEventListener(
+"change",
+calculateNights
+);
+
+
+/* =========================
+   رقم الطلب
+========================= */
+
+function generateOrderNumber(){
+
+const now = new Date();
+
+const year =
+now.getFullYear();
+
+const month =
+String(now.getMonth()+1)
+.padStart(2,"0");
+
+const day =
+String(now.getDate())
+.padStart(2,"0");
+
+const hour =
+String(now.getHours())
+.padStart(2,"0");
+
+const minute =
+String(now.getMinutes())
+.padStart(2,"0");
+
+const second =
+String(now.getSeconds())
+.padStart(2,"0");
+
+const random =
+Math.floor(100+Math.random()*900);
+
+return "AFG-HOTEL-" +
+year +
+month +
+day +
+"-" +
+hour +
+minute +
+second +
+"-" +
+random;
+
+}
+
+
+/* =========================
+   تجهيز الطلب
+========================= */
+
+submitHotel.addEventListener(
+"click",
+function(){
+
+const type =
+hotelType.value;
+
+const destination =
+document.getElementById("destination")
+.value.trim();
+
+const checkInValue =
+checkIn.value;
+
+const checkOutValue =
+checkOut.value;
+
+const rooms =
+document.getElementById("rooms")
+.value;
+
+const guests =
+document.getElementById("guests")
+.value;
+
+const stars =
+document.getElementById("stars")
+.value ||
+"غير محدد";
+
+const roomType =
+document.getElementById("roomType")
+.value ||
+"غير محدد";
+
+const name =
+document.getElementById("customerName")
+.value.trim();
+
+const phone =
+document.getElementById("customerPhone")
+.value.trim();
+
+const notes =
+document.getElementById("notes")
+.value.trim();
+
+
+/* التحقق */
+
+if(!type){
+alert("يرجى اختيار نوع الإقامة 🏨");
+return;
+}
+
+if(!destination){
+alert("يرجى كتابة المدينة أو الوجهة 🌍");
+return;
+}
+
+if(!checkInValue){
+alert("يرجى تحديد تاريخ الدخول 📅");
+return;
+}
+
+if(!checkOutValue){
+alert("يرجى تحديد تاريخ الخروج 📅");
+return;
+}
+
+const numberOfNights =
+calculateNights();
+
+if(numberOfNights<=0){
+
+alert(
+"يجب أن يكون تاريخ الخروج بعد تاريخ الدخول"
+);
+
+return;
+
+}
+
+if(!name){
+alert("يرجى كتابة الاسم الكامل 👤");
+return;
+}
+
+if(!phone){
+alert("يرجى كتابة رقم الهاتف 📱");
+return;
+}
+
+
+/* رقم الطلب */
+
+const orderNumber =
+generateOrderNumber();
+
+localStorage.setItem(
+"AFG_LAST_HOTEL_ORDER",
+orderNumber
+);
+
+
+/* =========================
+   رسالة واتساب
+========================= */
+
+const message =
+
+"🏨 *طلب حجز فندق جديد*" +
+"\n\n" +
+
+"━━━━━━━━━━━━━━" +
+"\n\n" +
+
+"✈️ *AFG TRAVEL*" +
+"\n\n" +
+
+"🔢 *رقم الطلب:* " +
+orderNumber +
+"\n\n" +
+
+"🏨 *نوع الإقامة:* " +
+type +
+"\n" +
+
+"🌍 *الوجهة:* " +
+destination +
+"\n\n" +
+
+"📅 *تاريخ الدخول:* " +
+checkInValue +
+"\n" +
+
+"📅 *تاريخ الخروج:* " +
+checkOutValue +
+"\n" +
+
+"🌙 *عدد الليالي:* " +
+numberOfNights +
+"\n\n" +
+
+"🛏️ *عدد الغرف:* " +
+rooms +
+"\n" +
+
+"👥 *عدد النزلاء:* " +
+guests +
+"\n" +
+
+"⭐ *التصنيف:* " +
+stars +
+"\n" +
+
+"🛌 *نوع الغرفة:* " +
+roomType +
+"\n\n" +
+
+"👤 *بيانات العميل*" +
+"\n\n" +
+
+"الاسم: " +
+name +
+"\n" +
+
+"📱 الهاتف: " +
+phone +
+"\n\n" +
+
+"📝 *ملاحظات إضافية:*" +
+"\n" +
+
+(notes || "لا توجد ملاحظات") +
+"\n\n" +
+
+"━━━━━━━━━━━━━━" +
+"\n\n" +
+
+"⚠️ السعر والتوافر يتم تأكيدهما من AFG TRAVEL.";
+
+
+/* =========================
+   واتساب
+========================= */
+
+const whatsappNumber =
+"249967214147";
+
+const whatsappURL =
+"https://wa.me/" +
+whatsappNumber +
+"?text=" +
+encodeURIComponent(message);
+
+document.getElementById(
+"whatsappLink"
+).href =
+whatsappURL;
+
+
+/* =========================
+   عرض النتيجة
+========================= */
+
+document.getElementById(
+"resultNumber"
+).innerHTML =
+"🔢 رقم الطلب: <strong>" +
+orderNumber +
+"</strong>";
+
+
+document.getElementById(
+"resultDetails"
+).innerHTML =
+
+"🏨 <strong>نوع الإقامة:</strong> " +
+type +
+
+"<br><br>" +
+
+"🌍 <strong>الوجهة:</strong> " +
+destination +
+
+"<br><br>" +
+
+"📅 <strong>تاريخ الدخول:</strong> " +
+checkInValue +
+
+"<br><br>" +
+
+"📅 <strong>تاريخ الخروج:</strong> " +
+checkOutValue +
+
+"<br><br>" +
+
+"🌙 <strong>عدد الليالي:</strong> " +
+numberOfNights +
+
+"<br><br>" +
+
+"🛏️ <strong>عدد الغرف:</strong> " +
+rooms +
+
+"<br><br>" +
+
+"👥 <strong>عدد النزلاء:</strong> " +
+guests +
+
+"<br><br>" +
+
+"⭐ <strong>التصنيف:</strong> " +
+stars +
+
+"<br><br>" +
+
+"🛌 <strong>نوع الغرفة:</strong> " +
+roomType +
+
+"<br><br>" +
+
+"👤 <strong>الاسم:</strong> " +
+name +
+
+"<br><br>" +
+
+"📱 <strong>الهاتف:</strong> " +
+phone +
+
+"<br><br>" +
+
+"📝 <strong>الملاحظات:</strong> " +
+(notes || "لا توجد ملاحظات");
+
+
+result.style.display =
+"block";
+
+submitHotel.style.display =
+"none";
+
+
+setTimeout(function(){
+
+result.scrollIntoView({
+behavior:"smooth",
+block:"center"
+});
+
+},200);
+
+});
+
+
+/* =========================
+   نسخ رقم الطلب
+========================= */
+
+document.getElementById(
+"copyOrder"
+).addEventListener(
+"click",
+function(){
+
+const order =
+localStorage.getItem(
+"AFG_LAST_HOTEL_ORDER"
+);
+
+if(!order){
+
+alert("لا يوجد رقم طلب حالي.");
+
+return;
+
+}
+
+if(
+navigator.clipboard &&
+navigator.clipboard.writeText
+){
+
+navigator.clipboard.writeText(order)
+.then(function(){
+
+alert(
+"تم نسخ رقم الطلب بنجاح ✅\n" +
+order
+);
+
+})
+.catch(function(){
+
+alert(
+"رقم الطلب:\n" +
+order
+);
+
+});
+
+}else{
+
+alert(
+"رقم الطلب:\n" +
+order
+);
+
+}
+
+});
+
+
+/* =========================
+   طلب جديد
+========================= */
+
+document.getElementById(
+"newOrder"
+).addEventListener(
+"click",
+function(){
+
+document.getElementById(
+"destination"
+).value="";
+
+checkIn.value="";
+checkOut.value="";
+
+document.getElementById(
+"rooms"
+).value="1";
+
+document.getElementById(
+"guests"
+).value="1";
+
+document.getElementById(
+"stars"
+).value="";
+
+document.getElementById(
+"roomType"
+).value="";
+
+document.getElementById(
+"customerName"
+).value="";
+
+document.getElementById(
+"customerPhone"
+).value="";
+
+document.getElementById(
+"notes"
+).value="";
+
+hotelType.value="";
+
+hotelButtons.forEach(
+b=>b.classList.remove("active")
+);
+
+nightsBox.style.display="none";
+
+result.style.display="none";
+
+submitHotel.style.display="block";
+
+document.getElementById(
+"hotelSearch"
+).scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+
+});
+
+
+/* =========================
+   منع التاريخ القديم
+========================= */
+
+const today =
+new Date();
+
+const todayString =
+today.getFullYear() +
+"-" +
+String(today.getMonth()+1)
+.padStart(2,"0") +
+"-" +
+String(today.getDate())
+.padStart(2,"0");
+
+checkIn.min =
+todayString;
+
+checkOut.min =
+todayString;
+
+</script>
+
+</body>
+</html>
