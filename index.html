@@ -1,0 +1,3632 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>AFG TRAVEL | للسفر والسياحة</title>
+
+<style>
+*{
+box-sizing:border-box;
+margin:0;
+padding:0
+}
+
+html{
+scroll-behavior:smooth
+}
+
+body{
+font-family:Arial,Tahoma,sans-serif;
+background:#f7f9fc;
+color:#172b4d;
+overflow-x:hidden
+}
+
+a{
+text-decoration:none
+}
+
+.container{
+width:92%;
+max-width:1200px;
+margin:auto
+}
+
+/* ================= HEADER ================= */
+
+header{
+min-height:760px;
+position:relative;
+color:#fff;
+overflow:hidden;
+background:
+linear-gradient(90deg,rgba(2,23,57,.93),rgba(5,60,130,.58)),
+url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=2000&q=90")
+center/cover
+}
+
+/* ================= NAV ================= */
+
+.nav{
+position:absolute;
+top:0;
+right:0;
+left:0;
+z-index:20;
+padding:20px 5%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:rgba(3,24,58,.35);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.15)
+}
+
+.logo{
+font-size:29px;
+font-weight:900;
+letter-spacing:1px;
+color:#fff
+}
+
+.logo span{
+color:#e9b340
+}
+
+.nav-links{
+display:flex;
+gap:22px;
+align-items:center
+}
+
+.nav-links a{
+color:#fff;
+font-weight:bold;
+font-size:14px
+}
+
+.nav-links a:hover{
+color:#e9b340
+}
+
+.nav-contact{
+color:#fff;
+border:1px solid #e9b340;
+padding:10px 17px;
+border-radius:9px;
+font-weight:bold
+}
+
+/* ================= HERO ================= */
+
+.hero{
+padding-top:175px;
+text-align:center;
+width:92%;
+max-width:950px;
+margin:auto
+}
+
+.badge{
+display:inline-block;
+padding:9px 18px;
+border-radius:30px;
+background:rgba(255,255,255,.13);
+border:1px solid rgba(255,255,255,.25);
+margin-bottom:20px;
+font-size:14px
+}
+
+.hero h1{
+font-size:62px;
+line-height:1.2;
+font-weight:900;
+text-shadow:0 5px 20px rgba(0,0,0,.3)
+}
+
+.hero h1 span{
+color:#e9b340
+}
+
+.hero p{
+max-width:760px;
+margin:20px auto;
+font-size:20px;
+line-height:1.9;
+color:#e5edf8
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:14px;
+margin-top:30px;
+flex-wrap:wrap
+}
+
+.hero-btn{
+padding:15px 30px;
+border-radius:11px;
+font-weight:bold;
+font-size:16px;
+transition:.3s
+}
+
+.gold-btn{
+background:#e9b340;
+color:#062453
+}
+
+.white-btn{
+color:#fff;
+border:1px solid rgba(255,255,255,.45);
+background:rgba(255,255,255,.1)
+}
+
+.hero-btn:hover{
+transform:translateY(-4px)
+}
+
+/* ================= SEARCH ================= */
+
+.search-wrapper{
+position:absolute;
+left:5%;
+right:5%;
+bottom:25px;
+z-index:30;
+max-width:1180px;
+margin:auto
+}
+
+.search-box{
+background:#fff;
+border:2px solid #e9b340;
+border-radius:22px;
+box-shadow:0 20px 55px rgba(0,32,80,.25);
+overflow:visible
+}
+
+.search-tabs{
+display:flex;
+background:#06285e;
+border-radius:22px 22px 0 0;
+overflow:hidden
+}
+
+.search-tab{
+flex:1;
+padding:18px;
+color:#fff;
+text-align:center;
+font-weight:bold;
+cursor:pointer;
+border-left:1px solid rgba(255,255,255,.12)
+}
+
+.search-tab.active{
+background:#e9b340;
+color:#062453;
+box-shadow:inset 0 -4px #062453
+}
+
+.search-content{
+padding:22px;
+background:linear-gradient(180deg,#fffdf5,#fff)
+}
+
+.fields{
+display:grid;
+grid-template-columns:1fr 1fr 1fr 1fr;
+gap:14px
+}
+
+.field label{
+display:block;
+color:#20365e;
+font-size:13px;
+font-weight:bold;
+margin-bottom:7px
+}
+
+.field input,
+.field select{
+width:100%;
+height:48px;
+border:2px solid #eadcae;
+border-radius:10px;
+padding:0 12px;
+background:#f9fbff;
+outline:none;
+font-size:14px;
+color:#243b60
+}
+
+.field input:focus,
+.field select:focus{
+border-color:#0967df;
+box-shadow:0 0 0 3px rgba(9,103,223,.08)
+}
+
+/* ================= AIRPORT ================= */
+
+.airport-field{
+position:relative
+}
+
+.airport-list{
+display:none;
+position:absolute;
+right:0;
+left:0;
+top:76px;
+background:#fff;
+border:1px solid #dce4ef;
+border-radius:12px;
+box-shadow:0 15px 40px rgba(0,0,0,.18);
+max-height:360px;
+overflow-y:auto;
+z-index:100
+}
+
+.airport-main{
+display:flex;
+flex-direction:column;
+gap:3px;
+min-width:0
+}
+
+.airport-main strong{
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis
+}
+
+.airport-main small{
+color:#7a8799;
+font-size:11px;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis
+}
+
+.airport-empty{
+padding:18px;
+text-align:center;
+color:#68768c;
+font-size:13px
+}
+
+.airport-status{
+font-size:10px;
+color:#7b8798;
+margin-top:5px
+}
+
+.airport-option{
+padding:13px;
+cursor:pointer;
+border-bottom:1px solid #eef2f7;
+color:#20365e;
+font-size:14px;
+text-align:right;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:12px;
+direction:rtl
+}
+
+.airport-option:hover{
+background:#eef5ff
+}
+
+.iata{
+color:#0967df;
+font-weight:900;
+font-size:16px;
+letter-spacing:1px;
+background:#edf5ff;
+padding:5px 8px;
+border-radius:7px;
+order:-1;
+flex:none
+}
+
+.airport-top-result{
+display:none;
+margin-top:7px;
+padding:8px 10px;
+background:#eef5ff;
+border:1px solid #cfe0fa;
+border-radius:9px;
+color:#062453;
+font-size:11px;
+font-weight:bold
+}
+
+.airport-top-result strong{
+color:#0967df;
+margin-left:5px
+}
+
+/* ================= QUICK ================= */
+
+.quick-options{
+grid-column:1/-1;
+display:flex;
+align-items:center;
+gap:7px;
+flex-wrap:wrap;
+padding:8px 10px;
+background:#fff8df;
+border:1px solid #efd27a;
+border-radius:10px;
+color:#72530b;
+font-size:11px;
+font-weight:bold
+}
+
+.quick-options button{
+border:1px solid #e9b340;
+background:#fff;
+color:#062453;
+border-radius:7px;
+padding:6px 9px;
+font-size:10px;
+font-weight:900;
+cursor:pointer
+}
+
+/* ================= PASSENGERS ================= */
+
+.passengers{
+grid-column:1/-1;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:14px;
+padding:14px;
+background:#f7faff;
+border:1px solid #e2e9f3;
+border-radius:13px
+}
+
+.passengers:before{
+content:"👥 عدد المسافرين";
+grid-column:1/-1;
+color:#092b62;
+font-weight:900;
+font-size:14px
+}
+
+.search-btn{
+grid-column:1/-1;
+height:54px;
+border:0;
+border-radius:11px;
+background:linear-gradient(135deg,#e9b340,#f4c64d);
+color:#062453;
+font-size:17px;
+font-weight:900;
+cursor:pointer;
+box-shadow:0 7px 18px rgba(233,179,64,.35)
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+padding:85px 0 70px
+}
+
+.section-title{
+text-align:center;
+margin-bottom:40px
+}
+
+.section-title small{
+color:#0967df;
+font-weight:bold
+}
+
+.section-title h2{
+color:#092b62;
+font-size:35px;
+margin:9px 0
+}
+
+.section-title p{
+color:#6c7789
+}
+
+.service-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px
+}
+
+.service{
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,30,80,.08);
+transition:.3s;
+color:#152a4d
+}
+
+.service:hover{
+transform:translateY(-8px);
+box-shadow:0 18px 40px rgba(0,30,80,.16)
+}
+
+.service-image{
+height:145px;
+background-size:cover;
+background-position:center
+}
+
+.flight{
+background-image:url("https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=85")
+}
+
+.hotel{
+background-image:url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85")
+}
+
+.umrah{
+background-image:url("https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=900&q=85")
+}
+
+.visa{
+background-image:url("https://images.unsplash.com/photo-1553531889-56a6febe2eae?auto=format&fit=crop&w=900&q=85")
+}
+
+.service-content{
+padding:20px
+}
+
+.service-content h3{
+color:#092b62;
+margin-bottom:8px
+}
+
+.service-content p{
+color:#707b8b;
+font-size:13px;
+line-height:1.7
+}
+
+/* ================= DESTINATIONS ================= */
+
+.destinations{
+background:#fff;
+padding:80px 0
+}
+
+.destination-grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:15px
+}
+
+.destination{
+height:280px;
+border-radius:18px;
+overflow:hidden;
+position:relative;
+background-size:cover;
+background-position:center
+}
+
+.destination:after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(transparent 35%,rgba(0,20,55,.9))
+}
+
+.destination-content{
+position:absolute;
+z-index:2;
+bottom:18px;
+right:17px;
+color:#fff
+}
+
+.destination-content h3{
+font-size:21px;
+margin-bottom:5px
+}
+
+.destination-content span{
+font-size:12px
+}
+
+.makkah{
+background-image:url("https://images.unsplash.com/photo-1565552645632-d725f8bfc19a?auto=format&fit=crop&w=900&q=85")
+}
+
+.medina{
+background-image:url("https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?auto=format&fit=crop&w=900&q=85")
+}
+
+.dubai{
+background-image:url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=85")
+}
+
+.sudan{
+background-image:url("https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=900&q=85")
+}
+
+.riyadh{
+background-image:url("https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=85")
+}
+
+/* ================= WHY ================= */
+
+.why{
+padding:80px 0;
+background:linear-gradient(135deg,#031b40,#0752a9);
+color:#fff
+}
+
+.why .section-title h2{
+color:#fff
+}
+
+.why .section-title p{
+color:#d7e2f3
+}
+
+.why-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:18px
+}
+
+.why-card{
+background:rgba(255,255,255,.09);
+border:1px solid rgba(255,255,255,.15);
+border-radius:18px;
+padding:30px 20px;
+text-align:center
+}
+
+.why-icon{
+font-size:40px;
+margin-bottom:13px
+}
+
+.why-card h3{
+margin-bottom:10px
+}
+
+.why-card p{
+color:#d7e2f3;
+line-height:1.7;
+font-size:14px
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+padding:80px 0
+}
+
+.contact-box{
+background:#fff;
+border-radius:25px;
+box-shadow:0 12px 40px rgba(0,30,80,.1);
+padding:40px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:35px
+}
+
+.contact-box h2{
+color:#092b62;
+margin-bottom:15px
+}
+
+.contact-box p{
+color:#68768c;
+line-height:1.9
+}
+
+.contact-info{
+margin-top:20px;
+line-height:2.3;
+font-weight:bold;
+color:#20365e
+}
+
+.map{
+width:100%;
+height:330px;
+border:0;
+border-radius:18px
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#031a3d;
+color:#fff;
+padding:45px 0 20px
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:1.3fr 1fr 1fr;
+gap:35px
+}
+
+footer h3{
+color:#e9b340;
+margin-bottom:14px
+}
+
+footer p,
+footer a{
+color:#cbd7e9;
+line-height:2
+}
+
+.footer-bottom{
+text-align:center;
+border-top:1px solid rgba(255,255,255,.13);
+margin-top:30px;
+padding-top:20px;
+color:#aebbd0
+}
+
+/* ================= FLOATING ================= */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+left:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:#25D366;
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:29px;
+z-index:200;
+box-shadow:0 7px 25px rgba(0,0,0,.25)
+}
+
+.afg-floating{
+position:fixed;
+bottom:90px;
+left:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:linear-gradient(135deg,#06204e,#0967df);
+color:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:900;
+border:3px solid #fff;
+z-index:200;
+box-shadow:0 7px 25px rgba(0,0,0,.25)
+}
+
+/* ================= RESULTS ================= */
+
+.search-results{
+display:none;
+padding:28px 0 45px;
+background:#f7f9fc
+}
+
+.results-card{
+max-width:1180px;
+margin:auto;
+background:#fff;
+border:2px solid #e9b340;
+border-radius:20px;
+box-shadow:0 15px 45px rgba(0,30,80,.12);
+overflow:hidden
+}
+
+.results-head{
+background:linear-gradient(135deg,#062453,#0b5ed7);
+color:#fff;
+padding:18px 22px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:12px
+}
+
+.results-head h2{
+font-size:21px
+}
+
+.results-head span{
+font-size:12px;
+color:#fff3c4
+}
+
+.results-body{
+padding:20px
+}
+
+.request-summary{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+margin-bottom:16px
+}
+
+.summary-item{
+background:#fffaf0;
+border:1px solid #efd27a;
+border-radius:11px;
+padding:12px;
+text-align:center
+}
+
+.request-number{
+background:#062453;
+color:#fff;
+border-radius:12px;
+padding:13px 16px;
+margin-bottom:12px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:12px;
+font-weight:900
+}
+
+.request-number span{
+color:#e9b340;
+font-size:18px;
+letter-spacing:1px
+}
+
+.copy-request{
+border:0;
+background:#e9b340;
+color:#062453;
+border-radius:8px;
+padding:7px 10px;
+font-weight:900;
+cursor:pointer
+}
+
+.summary-item small{
+display:block;
+color:#7b6a3c;
+font-size:11px;
+margin-bottom:5px
+}
+
+.summary-item strong{
+display:block;
+color:#062453;
+font-size:14px;
+white-space:pre-line
+}
+
+.result-note{
+background:#f4f8ff;
+border:1px solid #dce7f7;
+border-radius:11px;
+padding:13px;
+color:#40546f;
+line-height:1.8;
+font-size:13px;
+margin-bottom:15px
+}
+
+.result-actions{
+display:flex;
+gap:10px;
+flex-wrap:wrap
+}
+
+.result-action{
+border:0;
+border-radius:10px;
+padding:13px 18px;
+font-weight:900;
+cursor:pointer;
+font-size:14px
+}
+
+.client-view{
+background:#e9b340;
+color:#062453
+}
+
+.wa-request{
+background:#25D366;
+color:#fff
+}
+
+.edit-request{
+background:#eef3f9;
+color:#20365e
+}
+
+/* ================= CLIENT MODAL ================= */
+
+.client-modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,15,40,.72);
+z-index:500;
+padding:25px;
+align-items:center;
+justify-content:center
+}
+
+.client-modal.open{
+display:flex
+}
+
+.client-sheet{
+background:#fff;
+width:min(650px,100%);
+max-height:90vh;
+overflow:auto;
+border-radius:20px;
+border:3px solid #e9b340;
+box-shadow:0 25px 80px rgba(0,0,0,.35);
+padding:24px
+}
+
+.client-sheet h2{
+text-align:center;
+color:#062453;
+margin-bottom:18px
+}
+
+.client-route{
+font-size:22px;
+text-align:center;
+font-weight:900;
+color:#0967df;
+padding:15px;
+background:#fff8df;
+border-radius:12px;
+margin-bottom:15px
+}
+
+.client-sheet .close-modal{
+float:left;
+border:0;
+background:#eef3f9;
+border-radius:8px;
+padding:7px 12px;
+cursor:pointer
+}
+
+.client-detail{
+background:#f7faff;
+border:1px solid #e2e9f3;
+border-radius:11px;
+padding:10px 12px;
+margin:7px 0;
+line-height:1.8
+}
+
+/* ================= MULTI CITY ================= */
+
+.multi-city-box{
+display:none;
+grid-column:1/-1;
+background:#f7faff;
+border:1px solid #dfe7f2;
+border-radius:14px;
+padding:14px
+}
+
+.multi-city-title{
+display:flex;
+align-items:center;
+justify-content:space-between;
+color:#092b62;
+font-weight:900;
+margin-bottom:10px
+}
+
+.multi-row{
+display:grid;
+grid-template-columns:1fr 1fr 48px;
+gap:10px;
+margin-bottom:10px;
+align-items:end
+}
+
+.multi-row label{
+display:block;
+color:#20365e;
+font-size:12px;
+font-weight:bold;
+margin-bottom:6px
+}
+
+.multi-airport{
+position:relative
+}
+
+.multi-row input{
+width:100%;
+height:44px;
+border:1px solid #d7dfeb;
+border-radius:9px;
+padding:0 10px;
+background:#fff
+}
+
+.multi-airport-list{
+display:none;
+position:absolute;
+top:50px;
+right:0;
+left:0;
+background:#fff;
+border:1px solid #dce4ef;
+border-radius:10px;
+box-shadow:0 12px 30px rgba(0,0,0,.15);
+max-height:220px;
+overflow:auto;
+z-index:150
+}
+
+.multi-selected{
+display:none;
+margin-top:5px;
+padding:5px 8px;
+border-radius:7px;
+background:#edf5ff;
+color:#062453;
+font-size:10px;
+font-weight:bold
+}
+
+.add-city{
+border:0;
+background:#e9b340;
+color:#062453;
+border-radius:9px;
+height:44px;
+width:48px;
+font-size:24px;
+font-weight:900;
+cursor:pointer
+}
+
+.remove-city{
+border:0;
+background:#eef2f7;
+color:#7a8799;
+border-radius:9px;
+height:44px;
+width:48px;
+font-size:18px;
+cursor:pointer
+}
+
+.date-help{
+font-size:10px;
+color:#7b8798;
+margin-top:5px
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:900px){
+
+.nav-links{
+display:none
+}
+
+.hero h1{
+font-size:44px
+}
+
+.fields{
+grid-template-columns:1fr 1fr
+}
+
+.service-grid{
+grid-template-columns:1fr 1fr
+}
+
+.destination-grid{
+grid-template-columns:1fr 1fr
+}
+
+.why-grid{
+grid-template-columns:1fr 1fr
+}
+
+.footer-grid{
+grid-template-columns:1fr
+}
+
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width:600px){
+
+header{
+min-height:720px
+}
+
+.nav{
+padding:13px 4%
+}
+
+.logo{
+font-size:20px
+}
+
+.nav-contact{
+padding:7px 10px;
+font-size:11px
+}
+
+.hero{
+padding-top:105px;
+width:94%
+}
+
+.badge{
+font-size:11px;
+padding:7px 13px;
+margin-bottom:12px
+}
+
+.hero h1{
+font-size:29px;
+line-height:1.18
+}
+
+.hero p{
+font-size:13px;
+line-height:1.65;
+margin:12px auto
+}
+
+.hero-buttons{
+display:grid;
+grid-template-columns:1fr;
+gap:7px;
+margin-top:16px
+}
+
+.hero-btn{
+width:100%;
+padding:10px 7px;
+font-size:11px
+}
+
+.search-wrapper{
+left:3%;
+right:3%;
+bottom:18px
+}
+
+.search-box{
+border-radius:15px
+}
+
+.search-tabs{
+border-radius:15px 15px 0 0
+}
+
+.search-tab{
+font-size:10px;
+padding:12px 3px
+}
+
+.search-content{
+padding:11px
+}
+
+.fields{
+grid-template-columns:1fr 1fr;
+gap:8px
+}
+
+.field label{
+font-size:10px;
+margin-bottom:4px
+}
+
+.field input,
+.field select{
+height:39px;
+font-size:10px;
+padding:0 7px
+}
+
+.airport-list{
+top:62px;
+max-height:220px
+}
+
+.airport-option{
+padding:9px;
+font-size:11px
+}
+
+.iata{
+font-size:12px;
+padding:3px 5px
+}
+
+.airport-status{
+font-size:9px;
+margin-top:3px
+}
+
+.airport-top-result{
+font-size:9px;
+padding:6px
+}
+
+.quick-options{
+font-size:9px;
+padding:7px
+}
+
+.quick-options button{
+padding:5px 6px;
+font-size:9px
+}
+
+.passengers{
+grid-template-columns:repeat(3,1fr);
+gap:6px;
+padding:8px
+}
+
+.passengers:before{
+font-size:10px
+}
+
+.search-btn{
+height:45px;
+font-size:12px
+}
+
+.request-summary{
+grid-template-columns:1fr 1fr
+}
+
+.results-head{
+padding:14px
+}
+
+.results-head h2{
+font-size:16px
+}
+
+.results-body{
+padding:13px
+}
+
+.result-action{
+width:100%;
+font-size:12px
+}
+
+.client-modal{
+padding:12px
+}
+
+.client-sheet{
+padding:17px
+}
+
+.client-route{
+font-size:18px
+}
+
+.multi-city-box{
+padding:8px
+}
+
+.multi-city-title{
+font-size:10px
+}
+
+.multi-row{
+grid-template-columns:1fr 1fr 36px;
+gap:5px
+}
+
+.multi-row label{
+font-size:9px
+}
+
+.multi-row input{
+height:36px;
+font-size:9px
+}
+
+.multi-airport-list{
+top:40px
+}
+
+.add-city,
+.remove-city{
+width:36px;
+height:36px;
+font-size:18px
+}
+
+.services{
+padding-top:55px;
+padding-bottom:45px
+}
+
+.section-title{
+margin-bottom:25px
+}
+
+.section-title h2{
+font-size:24px
+}
+
+.section-title p{
+font-size:11px
+}
+
+.service-grid{
+grid-template-columns:1fr 1fr;
+gap:9px
+}
+
+.service{
+min-height:185px
+}
+
+.service-image{
+height:88px
+}
+
+.service-content{
+padding:9px
+}
+
+.service-content h3{
+font-size:13px
+}
+
+.service-content p{
+font-size:10px
+}
+
+.destination-grid{
+grid-template-columns:1fr 1fr
+}
+
+.destination{
+height:185px
+}
+
+.destination-content h3{
+font-size:16px
+}
+
+.destination-content span{
+font-size:9px
+}
+
+.why-grid{
+grid-template-columns:1fr 1fr
+}
+
+.why-card{
+padding:17px 9px
+}
+
+.why-icon{
+font-size:29px
+}
+
+.why-card h3{
+font-size:13px
+}
+
+.why-card p{
+font-size:10px
+}
+
+.contact-box{
+grid-template-columns:1fr;
+padding:17px
+}
+
+.contact-box h2{
+font-size:21px
+}
+
+.map{
+height:235px
+}
+
+.footer-grid{
+grid-template-columns:1fr 1fr;
+gap:18px
+}
+
+footer{
+padding:28px 0 15px
+}
+
+footer p,
+footer a{
+font-size:10px
+}
+
+.afg-floating,
+.whatsapp{
+width:49px;
+height:49px
+}
+
+.afg-floating{
+bottom:76px
+}
+
+.whatsapp{
+bottom:16px
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<nav class="nav">
+
+<a href="index.html" class="logo">
+AFG <span>TRAVEL</span>
+</a>
+
+<div class="nav-links">
+
+<a href="#services">الخدمات</a>
+
+<a href="#destinations">الوجهات</a>
+
+<!-- تم حذف زر الرحلات من القائمة الرئيسية -->
+
+<a href="hotel.html">الفنادق</a>
+
+<a href="umrah.html">العمرة</a>
+
+<a href="visa.html">التأشيرات</a>
+
+<a href="track.html">متابعة الطلب</a>
+
+<a href="#contact">تواصل معنا</a>
+
+</div>
+
+<a
+href="https://wa.me/249967214147"
+target="_blank"
+rel="noopener"
+class="nav-contact">
+تواصل معنا
+</a>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<div class="hero">
+
+<div class="badge">
+✈️ رحلتك تبدأ من هنا
+</div>
+
+<h1>
+اكتشف العالم مع<br>
+<span>AFG TRAVEL</span>
+</h1>
+
+<p>
+ابحث عن المطارات الدولية والإقليمية برمز IATA أو اسم المدينة،
+وجهّز طلب رحلتك بسهولة واحترافية.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#search" class="hero-btn gold-btn">
+🔎 ابحث عن الرحلات
+</a>
+
+<a href="#services" class="hero-btn white-btn">
+🌍 استكشف خدماتنا
+</a>
+
+</div>
+
+</div>
+
+<!-- ================= SEARCH ================= -->
+
+<div class="search-wrapper" id="search">
+
+<div class="search-box">
+
+<div class="search-tabs">
+
+<div class="search-tab active" onclick="tripType(this)">
+⇄ ذهاب وعودة
+</div>
+
+<div class="search-tab" onclick="tripType(this)">
+✈ ذهاب فقط
+</div>
+
+<div class="search-tab" onclick="tripType(this)">
+♧ مدن متعددة
+</div>
+
+</div>
+
+<div class="search-content">
+
+<div class="fields">
+
+<!-- FROM -->
+
+<div class="field airport-field">
+
+<label>
+من — مدينة المغادرة
+</label>
+
+<input
+id="fromInput"
+type="text"
+placeholder="اكتب IATA مثل KRT أو اسم المدينة"
+autocomplete="off"
+oninput="showAirports('fromInput','fromList')"
+onclick="showAirports('fromInput','fromList')"
+>
+
+<div
+class="airport-top-result"
+id="fromTop">
+</div>
+
+<div
+class="airport-list"
+id="fromList">
+</div>
+
+<div
+class="airport-status"
+id="fromStatus">
+🌍 قاعدة مطارات عالمية — يمكنك البحث برمز IATA أو اسم المدينة
+</div>
+
+</div>
+
+<!-- TO -->
+
+<div class="field airport-field">
+
+<label>
+إلى — مدينة الوصول
+</label>
+
+<input
+id="toInput"
+type="text"
+placeholder="اكتب IATA مثل JED أو اسم المدينة"
+autocomplete="off"
+oninput="showAirports('toInput','toList')"
+onclick="showAirports('toInput','toList')"
+>
+
+<div
+class="airport-top-result"
+id="toTop">
+</div>
+
+<div
+class="airport-list"
+id="toList">
+</div>
+
+<div
+class="airport-status"
+id="toStatus">
+🌍 قاعدة مطارات عالمية — يمكنك البحث برمز IATA أو اسم المدينة
+</div>
+
+</div>
+
+<!-- DEPART -->
+
+<div class="field">
+
+<label>
+تاريخ الذهاب
+</label>
+
+<input
+id="departDate"
+type="date"
+>
+
+<div class="date-help">
+اختر تاريخ السفر
+</div>
+
+</div>
+
+<!-- RETURN -->
+
+<div class="field" id="returnField">
+
+<label>
+تاريخ العودة
+</label>
+
+<input
+id="returnDate"
+type="date"
+>
+
+<div class="date-help">
+للرحلات ذهاب وعودة
+</div>
+
+</div>
+
+<!-- MULTI CITY -->
+
+<div
+class="multi-city-box"
+id="multiCityBox">
+
+<div class="multi-city-title">
+
+<span>
+🛫 مسارات المدن المتعددة
+</span>
+
+<span style="font-size:11px;color:#7a8799">
+أضف مسارًا باستخدام +
+</span>
+
+</div>
+
+<div id="multiRows"></div>
+
+</div>
+
+<!-- QUICK OPTIONS -->
+
+<div class="quick-options">
+
+<span>
+✨ خيارات البحث السريع
+</span>
+<button
+type="button"
+onclick="setRoute('KRT','JED')">
+KRT → JED
+</button>
+
+<button
+type="button"
+onclick="setRoute('PZU','DOH')">
+PZU → DOH
+</button>
+
+<button
+type="button"
+onclick="setRoute('RUH','DXB')">
+RUH → DXB
+</button>
+
+</div>
+
+<!-- PASSENGERS -->
+
+<div class="passengers">
+
+<div class="field">
+
+<label>
+👨 البالغون (12+ سنة)
+</label>
+
+<select id="adults">
+
+<option>1 بالغ</option>
+<option>2 بالغين</option>
+<option>3 بالغين</option>
+<option>4 بالغين</option>
+<option>5 بالغين</option>
+<option>6 بالغين</option>
+<option>7 بالغين</option>
+<option>8 بالغين</option>
+<option>9 بالغين</option>
+
+</select>
+
+</div>
+
+<div class="field">
+
+<label>
+🧒 الأطفال (2–11 سنة)
+</label>
+
+<select id="children">
+
+<option>0 أطفال</option>
+<option>1 طفل</option>
+<option>2 أطفال</option>
+<option>3 أطفال</option>
+<option>4 أطفال</option>
+<option>5 أطفال</option>
+<option>6 أطفال</option>
+
+</select>
+
+</div>
+
+<div class="field">
+
+<label>
+👶 الرضع (أقل من سنتين)
+</label>
+
+<select id="infants">
+
+<option>0 رضع</option>
+<option>1 رضيع</option>
+<option>2 رضع</option>
+<option>3 رضع</option>
+<option>4 رضع</option>
+
+</select>
+
+</div>
+
+</div>
+
+<button
+class="search-btn"
+onclick="searchFlights()">
+🔍 بحث عن الرحلات
+</button>
+
+</div>
+</div>
+</div>
+
+</header>
+
+<!-- ================= SEARCH RESULTS ================= -->
+
+<section
+class="search-results"
+id="searchResults">
+
+<div class="container">
+
+<div class="results-card">
+
+<div class="results-head">
+
+<h2>
+✈️ نتيجة تجهيز طلب الرحلة
+</h2>
+
+<span>
+AFG TRAVEL
+</span>
+
+</div>
+
+<div class="results-body">
+
+<div class="request-number">
+
+رقم الطلب للمتابعة:
+
+<span id="requestNumberDisplay">
+—
+</span>
+
+<button
+class="copy-request"
+type="button"
+onclick="copyRequestNumber()">
+نسخ
+</button>
+
+</div>
+
+<div
+class="request-summary"
+id="requestSummary">
+</div>
+
+<div class="result-note">
+
+تم تجهيز طلب الرحلة ويمكنك عرضه للعميل أو إرساله مباشرة
+إلى واتساب الوكالة للمراجعة والتأكيد.
+
+</div>
+
+<div class="result-actions">
+
+<button
+class="result-action client-view"
+type="button"
+onclick="showClientView()">
+👤 عرض الطلب للعميل
+</button>
+
+<button
+class="result-action wa-request"
+type="button"
+onclick="sendRequestWhatsApp()">
+💬 إرسال الطلب إلى واتساب
+</button>
+
+<button
+class="result-action edit-request"
+type="button"
+onclick="document.getElementById('search').scrollIntoView({behavior:'smooth'})">
+✏️ تعديل البحث
+</button>
+
+</div>
+
+</div>
+</div>
+</div>
+
+</section>
+
+<!-- ================= CLIENT MODAL ================= -->
+
+<div
+class="client-modal"
+id="clientModal"
+onclick="if(event.target===this)closeClientView()">
+
+<div class="client-sheet">
+
+<button
+class="close-modal"
+type="button"
+onclick="closeClientView()">
+✕ إغلاق
+</button>
+
+<h2>
+AFG TRAVEL — تفاصيل طلب الرحلة
+</h2>
+
+<div
+class="client-route"
+id="clientRoute">
+—
+</div>
+
+<div id="clientDetails"></div>
+
+<div
+class="result-actions"
+style="margin-top:18px">
+
+<button
+class="result-action wa-request"
+type="button"
+onclick="sendRequestWhatsApp()">
+💬 إرسال الطلب إلى واتساب
+</button>
+
+</div>
+
+</div>
+</div>
+
+<!-- ================= SERVICES ================= -->
+
+<section
+class="services"
+id="services">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>
+خدماتنا
+</small>
+
+<h2>
+كل خدمات السفر في مكان واحد
+</h2>
+
+<p>
+اختر الخدمة التي تحتاجها وسنساعدك في إكمال طلبك.
+</p>
+
+</div>
+
+<div class="service-grid">
+
+<!-- FLIGHT SERVICE -->
+<a
+href="#search"
+class="service">
+
+<div class="service-image flight"></div>
+
+<div class="service-content">
+
+<h3>
+✈️ حجز الطيران
+</h3>
+
+<p>
+ابحث عن الرحلات وجهّز طلبك بسهولة.
+</p>
+
+</div>
+
+</a>
+
+<!-- HOTEL -->
+
+<a
+href="hotel.html"
+class="service">
+
+<div class="service-image hotel"></div>
+
+<div class="service-content">
+
+<h3>
+🏨 حجز الفنادق
+</h3>
+
+<p>
+فنادق وشقق ومنتجعات حول العالم.
+</p>
+
+</div>
+
+</a>
+
+<!-- UMRAH -->
+
+<a
+href="umrah.html"
+class="service">
+
+<div class="service-image umrah"></div>
+
+<div class="service-content">
+
+<h3>
+🕋 العمرة
+</h3>
+
+<p>
+طلبات وخدمات وبرامج العمرة.
+</p>
+
+</div>
+
+</a>
+
+<!-- VISA -->
+
+<a
+href="visa.html"
+class="service">
+
+<div class="service-image visa"></div>
+
+<div class="service-content">
+
+<h3>
+🛂 التأشيرات
+</h3>
+
+<p>
+خدمات واستفسارات التأشيرات.
+</p>
+
+</div>
+
+</a>
+
+</div>
+</div>
+</section>
+
+<!-- ================= DESTINATIONS ================= -->
+
+<section
+class="destinations"
+id="destinations">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>
+وجهات مميزة
+</small>
+
+<h2>
+اختر وجهتك القادمة
+</h2>
+
+<p>
+وجهات دينية وسياحية حول العالم.
+</p>
+
+</div>
+
+<div class="destination-grid">
+
+<div class="destination makkah">
+
+<div class="destination-content">
+
+<h3>
+مكة المكرمة
+</h3>
+
+<span>
+🕋 العمرة والرحلات الدينية
+</span>
+
+</div>
+</div>
+
+<div class="destination medina">
+
+<div class="destination-content">
+
+<h3>
+المدينة المنورة
+</h3>
+
+<span>
+🕌 زيارة المسجد النبوي
+</span>
+
+</div>
+</div>
+
+<div class="destination dubai">
+
+<div class="destination-content">
+
+<h3>
+دبي
+</h3>
+
+<span>
+🌆 السياحة والترفيه
+</span>
+
+</div>
+</div>
+
+<div class="destination sudan">
+
+<div class="destination-content">
+
+<h3>
+السودان
+</h3>
+
+<span>
+🇸🇩 الخرطوم والوجهات السودانية
+</span>
+
+</div>
+</div>
+
+<div class="destination riyadh">
+
+<div class="destination-content">
+
+<h3>
+السعودية
+</h3>
+
+<span>
+🇸🇦 الرياض وجدة ومكة والمدينة
+</span>
+
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ================= WHY ================= -->
+
+<section class="why">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>
+AFG TRAVEL
+</small>
+
+<h2>
+لماذا تختارنا؟
+</h2>
+
+<p>
+خدمة احترافية وتجربة سفر أسهل.
+</p>
+
+</div>
+
+<div class="why-grid">
+
+<div class="why-card">
+
+<div class="why-icon">
+⚡
+</div>
+
+<h3>
+سرعة في الخدمة
+</h3>
+
+<p>
+نراجع طلبك ونتواصل معك بأسرع وقت ممكن.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<div class="why-icon">
+🛡️
+</div>
+
+<h3>
+خدمة موثوقة
+</h3>
+
+<p>
+نهتم بتفاصيل رحلتك ونساعدك في اختيار الأنسب.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<div class="why-icon">
+💰
+</div>
+
+<h3>
+أسعار منافسة
+</h3>
+
+<p>
+نساعدك في الوصول إلى أفضل الخيارات المتاحة.
+</p>
+
+</div>
+
+<div class="why-card">
+
+<div class="why-icon">
+📱
+</div>
+
+<h3>
+تواصل مباشر
+</h3>
+
+<p>
+تواصل معنا بسهولة عبر الهاتف أو واتساب.
+</p>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section
+class="contact"
+id="contact">
+
+<div class="container">
+
+<div class="contact-box">
+
+<div>
+
+<h2>
+تواصل مع AFG TRAVEL
+</h2>
+
+<p>
+يسعدنا استقبال استفساراتكم وطلبات الحجز وخدمات السفر.
+</p>
+
+<div class="contact-info">
+
+📧 بريد الوكالة:
+<br>
+afgtravel25@gmail.com
+
+<br><br>
+
+📧 البريد الرسمي:
+<br>
+info@afgtravel.com
+
+<br><br>
+
+📱 واتساب الوكالة:
+<br>
++249 967 214 147
+
+<br><br>
+
+📍 العنوان:
+<br>
+الخرطوم، العمارات، شارع 21،
+<br>
+عمارة رقم 11، الطابق 6، مكتب رقم 2
+
+</div>
+
+</div>
+
+<div>
+
+<h2>
+موقعنا
+</h2>
+
+<iframe
+class="map"
+src="https://www.google.com/maps?q=Al+Amarat+Street+21+Khartoum+Sudan&output=embed"
+loading="lazy">
+</iframe>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>
+AFG TRAVEL
+</h3>
+
+<p>
+للسفر والسياحة ✈️
+</p>
+
+<p>
+سفرك معنا... تجربة تليق بك.
+</p>
+
+</div>
+
+<div>
+
+<h3>
+روابط سريعة
+</h3>
+
+<p>
+<a href="index.html">
+الرئيسية
+</a>
+</p>
+
+<p>
+<a href="hotel.html">
+الفنادق
+</a>
+</p>
+
+<p>
+<a href="umrah.html">
+العمرة
+</a>
+</p>
+
+<p>
+<a href="visa.html">
+التأشيرات
+</a>
+</p>
+
+<p>
+<a href="track.html">
+متابعة الطلب
+</a>
+</p>
+
+</div>
+
+<div>
+
+<h3>
+بيانات الوكالة
+</h3>
+
+<p>
+📧 afgtravel25@gmail.com
+</p>
+
+<p>
+📧 info@afgtravel.com
+</p>
+
+<p>
+📱 +249 967 214 147
+</p>
+
+<p>
+📍 الخرطوم - العمارات - شارع 21
+</p>
+
+<p>
+عمارة 11 - الطابق 6 - مكتب 2
+</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© 2026 AFG TRAVEL — جميع الحقوق محفوظة
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- ================= FLOATING BUTTONS ================= -->
+
+<a
+href="#services"
+class="afg-floating">
+AFG
+</a>
+
+<a
+href="https://wa.me/249967214147"
+target="_blank"
+rel="noopener"
+class="whatsapp"
+aria-label="واتساب AFG TRAVEL">
+💬
+</a>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+let airports=[
+
+['الخرطوم','KRT','Sudan','Khartoum International Airport'],
+['بورتسودان','PZU','Sudan','Port Sudan New International Airport'],
+['جدة','JED','Saudi Arabia','King Abdulaziz International Airport'],
+['الرياض','RUH','Saudi Arabia','King Khalid International Airport'],
+['المدينة المنورة','MED','Saudi Arabia','Prince Mohammad Bin Abdulaziz International Airport'],
+['الدمام','DMM','Saudi Arabia','King Fahd International Airport'],
+['دبي','DXB','United Arab Emirates','Dubai International Airport'],
+['أبوظبي','AUH','United Arab Emirates','Zayed International Airport'],
+['الدوحة','DOH','Qatar','Hamad International Airport'],
+['مسقط','MCT','Oman','Muscat International Airport'],
+['القاهرة','CAI','Egypt','Cairo International Airport'],
+['إسطنبول','IST','Türkiye','Istanbul Airport'],
+['لندن','LHR','United Kingdom','London Heathrow Airport'],
+['باريس','CDG','France','Paris Charles de Gaulle Airport'],
+['الكويت','KWI','Kuwait','Kuwait International Airport'],
+['المنامة','BAH','Bahrain','Bahrain International Airport'],
+['عمّان','AMM','Jordan','Queen Alia International Airport'],
+['بيروت','BEY','Lebanon','Beirut-Rafic Hariri International Airport'],
+['نيروبي','NBO','Kenya','Jomo Kenyatta International Airport'],
+['أديس أبابا','ADD','Ethiopia','Addis Ababa Bole International Airport'],
+['دلهي','DEL','India','Indira Gandhi International Airport'],
+['مومباي','BOM','India','Chhatrapati Shivaji Maharaj International Airport'],
+['كوالالمبور','KUL','Malaysia','Kuala Lumpur International Airport'],
+['جاكرتا','CGK','Indonesia','Soekarno-Hatta International Airport'],
+['بانكوك','BKK','Thailand','Suvarnabhumi Airport'],
+['نيويورك','JFK','United States','John F Kennedy International Airport'],
+['تورنتو','YYZ','Canada','Toronto Pearson International Airport'],
+['الدار البيضاء','CMN','Morocco','Mohammed V International Airport'],
+['تونس','TUN','Tunisia','Tunis Carthage International Airport'],
+['الجزائر','ALG','Algeria','Houari Boumediene Airport']
+
+];
+
+let airportLoadingPromise=null;
+
+function normalize(s){
+
+return(s||'')
+.toString()
+.toLowerCase()
+.replace(/[أإآ]/g,'ا')
+.replace(/ى/g,'ي')
+.replace(/ة/g,'ه')
+.normalize('NFD')
+.replace(/[\u0300-\u036f]/g,'')
+
+}
+
+function csvSplit(line){
+
+const out=[];
+let cur='';
+let quoted=false;
+
+for(let i=0;i<line.length;i++){
+
+const c=line[i];
+
+if(c==='"'){
+
+if(quoted&&line[i+1]==='"'){
+cur+='"';
+i++
+}else{
+quoted=!quoted
+}
+
+}else if(c===','&&!quoted){
+
+out.push(cur);
+cur=''
+
+}else{
+
+cur+=c
+
+}
+
+}
+
+out.push(cur);
+
+return out
+
+}
+
+async function loadAllAirports(){
+
+if(airportLoadingPromise)
+return airportLoadingPromise;
+
+airportLoadingPromise=(async()=>{
+
+try{
+
+const res=await fetch(
+'https://cdn.jsdelivr.net/gh/mborsetti/airportsdata@main/airportsdata/airports.csv',
+{cache:'force-cache'}
+);
+
+if(!res.ok)
+throw Error();
+
+const lines=(await res.text()).split(/\r?\n/);
+
+const header=csvSplit(lines.shift()||'')
+.map(x=>x.replace(/^"|"$/g,'').trim().toLowerCase());
+
+const idx={};
+
+header.forEach((h,i)=>idx[h]=i);
+
+if(idx.iata===undefined)
+throw Error();
+
+const list=[];
+const seen=new Set();
+
+for(const line of lines){
+
+if(!line.trim())
+continue;
+
+const row=csvSplit(line);
+
+const iata=(row[idx.iata]||'')
+.trim()
+.toUpperCase();
+
+if(
+!/^[A-Z]{3}$/.test(iata)||
+seen.has(iata)
+)
+continue;
+
+const city=(row[idx.city]||'').trim();
+const name=(row[idx.name]||'').trim();
+const country=(row[idx.country]||'').trim();
+
+if(!city&&!name)
+continue;
+
+seen.add(iata);
+
+list.push([
+city||name,
+iata,
+country,
+name
+]);
+
+}
+if(list.length>500){
+
+airports=list;
+
+['fromStatus','toStatus'].forEach(id=>{
+
+const e=document.getElementById(id);
+
+if(e)
+e.textContent=
+'🌍 قاعدة المطارات العالمية جاهزة — '
++airports.length+
+' مطار';
+
+});
+
+}
+
+}catch(e){
+
+console.warn(
+'Using built-in airport list',
+e
+);
+
+}
+
+})();
+
+return airportLoadingPromise;
+
+}
+
+loadAllAirports();
+
+function airportResults(value){
+
+const v=normalize(value.trim());
+
+const upper=value.trim().toUpperCase();
+
+if(!v)
+return airports.slice(0,80);
+
+return airports
+.filter(a=>{
+
+const i=a[1].toUpperCase();
+
+const h=normalize(
+a[0]+' '+i+' '+a[2]+' '+(a[3]||'')
+);
+
+return i.startsWith(upper)||h.includes(v);
+
+})
+.sort((a,b)=>{
+
+const aa=
+a[1]===upper?0:
+a[1].startsWith(upper)?1:2;
+
+const bb=
+b[1]===upper?0:
+b[1].startsWith(upper)?1:2;
+
+return aa-bb;
+
+})
+.slice(0,120);
+
+}
+
+function airportOption(a,click){
+
+const item=document.createElement('div');
+
+item.className='airport-option';
+
+item.innerHTML=
+'<div class="airport-main">'+
+'<strong>'+escapeHtml(a[0])+'</strong>'+
+'<small>'+
+escapeHtml(a[2]||'')+
+(a[3]?' — '+escapeHtml(a[3]):'')+
+'</small>'+
+'</div>'+
+'<span class="iata">'+
+escapeHtml(a[1])+
+'</span>';
+
+item.onclick=()=>click(a);
+
+return item;
+
+}
+
+function showAirports(inputId,listId){
+
+const input=document.getElementById(inputId);
+
+const list=document.getElementById(listId);
+
+const top=document.getElementById(
+inputId==='fromInput'
+?'fromTop'
+:'toTop'
+);
+
+const results=airportResults(input.value);
+
+list.innerHTML='';
+
+top.style.display='none';
+
+if(!results.length){
+
+list.innerHTML=
+'<div class="airport-empty">'+
+'لا توجد نتيجة مطابقة — اكتب رمز IATA من 3 أحرف أو اسم المدينة'+
+'</div>';
+
+list.style.display='block';
+
+return;
+
+}
+
+results.forEach(a=>
+list.appendChild(
+airportOption(
+a,
+()=>selectAirport(
+inputId,
+listId,
+a
+)
+)
+)
+);
+
+list.style.display='block';
+
+}
+
+function selectAirport(inputId,listId,a){
+
+const input=document.getElementById(inputId);
+
+const top=document.getElementById(
+inputId==='fromInput'
+?'fromTop'
+:'toTop'
+);
+
+input.value=
+a[0]+' — '+a[1];
+
+input.dataset.iata=a[1];
+
+input.dataset.city=a[0];
+
+input.dataset.country=a[2]||'';
+
+input.dataset.name=a[3]||'';
+
+document.getElementById(listId)
+.style.display='none';
+
+top.innerHTML=
+'<strong>'+
+escapeHtml(a[1])+
+'</strong> '+
+escapeHtml(a[0])+
+(a[2]?' — '+escapeHtml(a[2]):'');
+
+top.style.display='block';
+
+}
+
+document.addEventListener(
+'click',
+e=>{
+
+if(
+!e.target.closest('.airport-field')&&
+!e.target.closest('.multi-airport')
+){
+
+document
+.querySelectorAll(
+'.airport-list,.multi-airport-list'
+)
+.forEach(x=>
+x.style.display='none'
+);
+
+}
+
+});
+
+function tripType(el){
+
+document
+.querySelectorAll('.search-tab')
+.forEach(x=>
+x.classList.remove('active')
+);
+
+el.classList.add('active');
+
+const oneWay=
+el.innerText.includes('ذهاب فقط');
+
+const multi=
+el.innerText.includes('مدن متعددة');
+
+document.getElementById(
+'returnField'
+).style.display=
+multi?'none':'block';
+
+document.getElementById(
+'returnField'
+).style.opacity=
+oneWay?'.45':'1';
+
+document.getElementById(
+'multiCityBox'
+).style.display=
+multi?'block':'none';
+
+document.querySelector(
+'.search-btn'
+).innerHTML=
+multi
+?'🔍 تجهيز طلب المدن المتعددة'
+:'🔍 بحث عن الرحلات';
+if(multi){
+
+initMultiRows();
+
+}else{
+
+clearMultiRows();
+
+}
+
+}
+
+function initMultiRows(){
+
+const rows=
+document.getElementById('multiRows');
+
+if(!rows.children.length)
+addMultiRow(true);
+
+}
+
+function clearMultiRows(){
+
+document.getElementById(
+'multiRows'
+).innerHTML='';
+
+}
+
+function addCity(){
+
+addMultiRow(false);
+
+}
+
+function addMultiRow(first){
+
+const rows=
+document.getElementById('multiRows');
+
+const row=
+document.createElement('div');
+
+row.className='multi-row';
+
+row.innerHTML=
+'<div class="multi-airport">'+
+'<label>من</label>'+
+'<input type="text" class="multi-from" placeholder="المدينة أو IATA" autocomplete="off">'+
+'<div class="multi-airport-list"></div>'+
+'<div class="multi-selected"></div>'+
+'</div>'+
+'<div class="multi-airport">'+
+'<label>إلى</label>'+
+'<input type="text" class="multi-to" placeholder="المدينة أو IATA" autocomplete="off">'+
+'<div class="multi-airport-list"></div>'+
+'<div class="multi-selected"></div>'+
+'</div>'+
+'<button type="button" class="'+
+(first?'add-city':'remove-city')+
+'" '+
+(first?
+'onclick="addCity()"':
+'onclick="this.parentElement.remove()"')+
+'>'+
+(first?'+':'×')+
+'</button>';
+
+rows.appendChild(row);
+
+setupMultiAirport(
+row.querySelector('.multi-from')
+);
+
+setupMultiAirport(
+row.querySelector('.multi-to')
+);
+
+}
+
+function setupMultiAirport(input){
+
+const list=
+input.parentElement
+.querySelector('.multi-airport-list');
+
+const selected=
+input.parentElement
+.querySelector('.multi-selected');
+
+function render(){
+
+const results=
+airportResults(input.value);
+
+list.innerHTML='';
+
+if(!results.length){
+
+list.innerHTML=
+'<div class="airport-empty">لا توجد نتيجة</div>';
+
+list.style.display='block';
+
+return;
+
+}
+
+results
+.slice(0,30)
+.forEach(a=>
+list.appendChild(
+airportOption(
+a,
+()=>{
+
+input.value=
+a[0]+' — '+a[1];
+
+input.dataset.iata=a[1];
+
+input.dataset.city=a[0];
+
+input.dataset.country=a[2]||'';
+
+selected.innerHTML=
+'<strong>'+
+escapeHtml(a[1])+
+'</strong> '+
+escapeHtml(a[0])+
+(a[2]?' — '+escapeHtml(a[2]):'');
+
+selected.style.display='block';
+
+list.style.display='none';
+
+}
+)
+)
+);
+
+list.style.display='block';
+
+}
+
+input.addEventListener(
+'input',
+render
+);
+
+input.addEventListener(
+'focus',
+render
+);
+
+}
+
+function setRoute(from,to){
+
+const f=
+airports.find(
+a=>a[1]===from
+);
+
+const t=
+airports.find(
+a=>a[1]===to
+);
+
+if(f)
+selectAirport(
+'fromInput',
+'fromList',
+f
+);
+
+if(t)
+selectAirport(
+'toInput',
+'toList',
+t
+);
+
+}
+
+function setMinDates(){
+
+const today=new Date();
+
+const iso=
+today.toISOString().slice(0,10);
+
+document.getElementById(
+'departDate'
+).min=iso;
+
+document.getElementById(
+'returnDate'
+).min=iso;
+
+document.getElementById(
+'departDate'
+).addEventListener(
+'change',
+()=>{
+
+const d=
+document.getElementById(
+'departDate'
+).value;
+
+document.getElementById(
+'returnDate'
+).min=
+d||iso;
+
+if(
+document.getElementById(
+'returnDate'
+).value&&
+d&&
+document.getElementById(
+'returnDate'
+).value<d
+){
+
+document.getElementById(
+'returnDate'
+).value='';
+
+}
+
+}
+);
+
+}
+
+function buildRequestData(){
+
+const active=
+document.querySelector(
+'.search-tab.active'
+)?.innerText||
+'ذهاب وعودة';
+
+const fi=
+document.getElementById(
+'fromInput'
+);
+
+const ti=
+document.getElementById(
+'toInput'
+);
+
+return{
+
+type:
+active
+.replace(/[⇄✈♧]/g,'')
+.trim(),
+
+from:
+fi?.value.trim()||
+'غير محدد',
+
+to:
+ti?.value.trim()||
+'غير محدد',
+
+fromIata:
+fi?.dataset.iata||'',
+
+toIata:
+ti?.dataset.iata||'',
+
+depart:
+document.getElementById(
+'departDate'
+)?.value||
+'غير محدد',
+
+ret:
+document.getElementById(
+'returnDate'
+)?.value||
+'غير محدد',
+
+adults:
+document.getElementById(
+'adults'
+)?.value||
+'1 بالغ',
+
+children:
+document.getElementById(
+'children'
+)?.value||
+'0 أطفال',
+
+infants:
+document.getElementById(
+'infants'
+)?.value||
+'0 رضع'
+
+};
+
+}
+
+function searchFlights(){
+
+const active=
+document.querySelector(
+'.search-tab.active'
+)?.innerText||'';
+
+if(active.includes('مدن متعددة')){
+
+const rows=[
+...document.querySelectorAll(
+'#multiRows .multi-row'
+)
+];
+
+if(!rows.length){
+
+alert(
+'يرجى إضافة مسار واحد على الأقل ✈️'
+);
+
+return;
+
+}
+
+const data=
+rows.map(r=>{
+
+const f=
+r.querySelector('.multi-from');
+
+const t=
+r.querySelector('.multi-to');
+
+return{
+
+from:f.value.trim(),
+
+to:t.value.trim(),
+
+fromIata:
+f.dataset.iata||'',
+
+toIata:
+t.dataset.iata||''
+
+};
+
+});
+
+if(
+data.some(
+x=>!x.from||!x.to
+)
+){
+
+alert(
+'يرجى إكمال جميع مسارات المدن المتعددة ✈️'
+);
+return;
+
+}
+
+const dates=
+[
+...document.querySelectorAll(
+'#multiRows .multi-row'
+)
+]
+.map(
+()=>document.getElementById(
+'departDate'
+).value||'غير محدد'
+);
+
+showResults({
+
+type:'مدن متعددة',
+
+from:
+data.map(
+(x,i)=>
+(i+1)+'. '+
+x.from+
+(x.fromIata?
+' ('+x.fromIata+')':'')+
+' → '+
+x.to+
+(x.toIata?
+' ('+x.toIata+')':'')
+).join('\n'),
+
+to:'',
+
+fromIata:'',
+
+toIata:'',
+
+depart:
+dates[0]||'غير محدد',
+
+ret:'غير محدد',
+
+adults:
+document.getElementById(
+'adults'
+).value,
+
+children:
+document.getElementById(
+'children'
+).value,
+
+infants:
+document.getElementById(
+'infants'
+).value,
+
+multi:data
+
+});
+
+return;
+
+}
+
+const d=
+buildRequestData();
+
+if(
+d.from==='غير محدد'||
+d.to==='غير محدد'
+){
+
+alert(
+'يرجى اختيار مدينة المغادرة ومدينة الوصول ✈️'
+);
+
+return;
+
+}
+
+if(
+!d.fromIata||
+!d.toIata
+){
+
+alert(
+'يرجى اختيار المطار من القائمة حتى يتم تثبيت رمز IATA الصحيح ✈️'
+);
+
+return;
+
+}
+
+if(
+d.depart==='غير محدد'
+){
+
+alert(
+'يرجى اختيار تاريخ الذهاب 📅'
+);
+
+return;
+
+}
+
+if(
+active.includes('ذهاب وعودة')&&
+d.ret==='غير محدد'
+){
+
+alert(
+'يرجى اختيار تاريخ العودة 📅'
+);
+
+return;
+
+}
+
+showResults(d);
+
+}
+
+/* ================= REQUEST NUMBER ================= */
+
+function generateRequestNumber(){
+
+const now=new Date();
+
+const date=
+String(now.getFullYear()).slice(-2)+
+String(now.getMonth()+1).padStart(2,'0')+
+String(now.getDate()).padStart(2,'0');
+
+const time=
+String(now.getHours()).padStart(2,'0')+
+String(now.getMinutes()).padStart(2,'0')+
+String(now.getSeconds()).padStart(2,'0');
+
+const rand=
+Math.floor(
+100+
+Math.random()*900
+);
+
+return(
+'AFG-'+
+date+
+'-'+
+time+
+'-'+
+rand
+);
+
+}
+
+function copyRequestNumber(){
+
+const n=
+window.currentRequest?.requestNumber;
+
+if(!n)
+return;
+
+if(navigator.clipboard){
+
+navigator.clipboard
+.writeText(n)
+.then(
+()=>
+alert(
+'تم نسخ رقم الطلب: '+n
+)
+);
+
+}else{
+
+const ta=
+document.createElement(
+'textarea'
+);
+
+ta.value=n;
+
+document.body.appendChild(ta);
+
+ta.select();
+
+document.execCommand('copy');
+
+ta.remove();
+
+alert(
+'تم نسخ رقم الطلب: '+n
+);
+
+}
+
+}
+
+/* ================= SHOW RESULTS ================= */
+
+function showResults(data){
+
+data.requestNumber=
+data.requestNumber||
+generateRequestNumber();
+
+data.status=
+data.status||
+'قيد المراجعة';
+
+data.createdAt=
+data.createdAt||
+new Date().toISOString();
+
+window.currentRequest=data;
+
+try{
+
+localStorage.setItem(
+'AFG_REQUEST_'+
+data.requestNumber,
+JSON.stringify(data)
+);
+
+localStorage.setItem(
+'AFG_LAST_REQUEST',
+data.requestNumber
+);
+
+}catch(e){}
+
+document.getElementById(
+'requestNumberDisplay'
+).textContent=
+data.requestNumber;
+
+document.getElementById(
+'requestSummary'
+).innerHTML=
+
+'<div class="summary-item">'+
+'<small>نوع الرحلة</small>'+
+'<strong>'+
+escapeHtml(data.type)+
+'</strong>'+
+'</div>'+
+
+'<div class="summary-item">'+
+'<small>من</small>'+
+'<strong>'+
+escapeHtml(data.from)+
+'</strong>'+
+'</div>'+
+
+'<div class="summary-item">'+
+'<small>إلى</small>'+
+'<strong>'+
+escapeHtml(
+data.to||'مسارات متعددة'
+)+
+'</strong>'+
+'</div>'+
+
+'<div class="summary-item">'+
+'<small>المسافرون</small>'+
+'<strong>'+
+escapeHtml(
+[
+data.adults,
+data.children,
+data.infants
+]
+.filter(Boolean)
+.join(' • ')
+)+
+'</strong>'+
+'</div>';
+
+document.getElementById(
+'searchResults'
+).style.display='block';
+
+setTimeout(
+()=>document.getElementById(
+'searchResults'
+).scrollIntoView({
+behavior:'smooth',
+block:'start'
+}),
+50
+);
+
+}
+
+/* ================= ESCAPE ================= */
+
+function escapeHtml(v){
+
+return String(v)
+.replace(
+/[&<>"']/g,
+m=>({
+
+'&':'&amp;',
+'<':'&lt;',
+'>':'&gt;',
+'"':'&quot;',
+"'":'&#039;'
+
+}[m])
+);
+
+}
+
+/* ================= CLIENT VIEW ================= */
+
+function showClientView(){
+
+const d=
+window.currentRequest;
+
+if(!d)
+return;
+
+document.getElementById(
+'clientRoute'
+).textContent=
+
+d.type==='مدن متعددة'
+?'🛫 مسارات متعددة'
+:
+(
+(d.fromIata||d.from)+
+'  →  '+
+(d.toIata||d.to)
+);
+
+document.getElementById(
+'clientDetails'
+).innerHTML=
+
+'<div class="client-detail">'+
+'<strong>رقم الطلب للمتابعة:</strong> '+
+escapeHtml(
+d.requestNumber||'—'
+)+
+'</div>'+
+
+'<div class="client-detail">'+
+'<strong>نوع الرحلة:</strong> '+
+escapeHtml(d.type)+
+'</div>'+
+
+'<div class="client-detail">'+
+'<strong>من:</strong> '+
+escapeHtml(d.from)+
+(d.fromIata?
+' ('+escapeHtml(d.fromIata)+')':'')+
+'</div>'+
+
+'<div class="client-detail">'+
+'<strong>إلى:</strong> '+
+escapeHtml(
+d.to||'مسارات متعددة'
+)+
+(d.toIata?
+' ('+escapeHtml(d.toIata)+')':'')+
+'</div>'+
+
+'<div class="client-detail">'+
+'<strong>تاريخ الذهاب:</strong> '+
+escapeHtml(d.depart)+
+'</div>'+
+
+'<div class="client-detail">'+
+'<strong>تاريخ العودة:</strong> '+
+escapeHtml(d.ret)+
+'</div>'+
+
+'<div class="client-detail">'+
+'<strong>المسافرون:</strong> '+
+escapeHtml(
+[
+d.adults,
+d.children,
+d.infants
+]
+.filter(Boolean)
+.join(' • ')
+)+
+'</div>'+
+
+'<p style="margin-top:14px;color:#68768c;line-height:1.8">'+
+'هذا عرض مبدئي لبيانات طلب العميل، وليس سعرًا أو حجزًا مؤكدًا حتى يتم الربط بمصدر الرحلات.'+
+'</p>';
+
+document.getElementById(
+'clientModal'
+).classList.add('open');
+
+}
+
+function closeClientView(){
+
+document.getElementById(
+'clientModal'
+).classList.remove('open');
+
+}
+
+/* ================= WHATSAPP ================= */
+
+function requestText(){
+
+const d=
+window.currentRequest;
+
+if(!d)
+return '';
+
+let routes=
+d.type==='مدن متعددة'
+?
+d.from
+:
+'من: '+
+d.from+
+(d.fromIata?
+' ('+d.fromIata+')':'')+
+'\nإلى: '+
+d.to+
+(d.toIata?
+' ('+d.toIata+')':'');
+
+return(
+✈️ طلب رحلة جديد — AFG TRAVEL\n\n'+
+
+'🔖 رقم الطلب للمتابعة: '+
+(d.requestNumber||'—')+
+'\n\n'+
+
+'نوع الرحلة: '+
+d.type+
+'\n'+
+
+routes+
+
+'\nتاريخ الذهاب: '+
+d.depart+
+
+'\nتاريخ العودة: '+
+d.ret+
+
+'\nالمسافرون: '+
+[
+d.adults,
+d.children,
+d.infants
+]
+.filter(Boolean)
+.join(' | ')+
+
+'\n\nيرجى مراجعة الطلب والتواصل مع العميل لتأكيد الرحلة والسعر.'
+
+);
+
+}
+
+function sendRequestWhatsApp(){
+
+const text=
+requestText();
+
+if(!text)
+return;
+
+window.open(
+'https://wa.me/249967214147?text='+
+encodeURIComponent(text),
+'_blank',
+'noopener'
+);
+
+}
+
+/* ================= INIT ================= */
+
+setMinDates();
+
+document.addEventListener(
+'keydown',
+e=>{
+
+if(e.key==='Escape')
+closeClientView();
+
+});
+
+</script>
+
+</body>
+</html>
